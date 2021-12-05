@@ -177,6 +177,10 @@ return lush(function()
 		TSVariable({ fg = color3 }),
 		TSVariableBuiltin({ fg = color5 }),
 
+		IndentBlanklineChar({ gui = "nocombine", fg = color8 }),
+		IndentBlanklineContextChar({ gui = "nocombine", fg = color7 }),
+		IndentBlanklineContextStart({ gui = "underline", sp = color7 }),
+
 		SpellBad({ gui = "underline", fg = color5, sp = color5 }),
 		SpellLocal({ gui = "underline", fg = color6, sp = color6 }),
 		SpellCap({ gui = "underline", fg = color3, sp = color3 }),
