@@ -73,8 +73,8 @@ return lush(function()
 		Cursor({ fg = background, bg = foreground }),
 		NonText({ fg = br_grey }),
 		EndOfBuffer({ fg = foreground, bg = background }),
-		LineNr({ fg = br_grey, bg = background }),
 		SignColumn({ fg = grey, bg = background }),
+		LineNr({ fg =  br_grey, bg = background }),
 		VertSplit({ fg = background, bg = grey }),
 		ColorColumn({ fg = grey }),
 		CursorColumn({ fg = grey }),
@@ -330,8 +330,8 @@ return lush(function()
 		semshiAttribute({ fg = color6 }),
 		semshiSelf({ fg = color7 }),
 		semshiUnresolved({ fg = color3, gui = "underline" }),
-		semshiSelected({ fg = background, bg = hsl("#ff875f") }),
-		semshiErrorSign({ fg = foreground, bg = hsl("#d70000") }),
-		semshiErrorChar({ fg = foreground, bg = hsl("#d70000") }),
+		semshiSelected({ fg = background, bg = color9.li(35) }),
+		semshiErrorSign({ fg = foreground, bg = color1.li(5) }),
+		semshiErrorChar({ fg = foreground, bg = color1.li(5) }),
 	}
 end)
