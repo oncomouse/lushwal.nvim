@@ -12,7 +12,7 @@ else
 		local xdg = require("lushwal.utils.xdg")
 		local cache_path = xdg("XDG_CACHE_HOME") .. "/lushwal"
 		vim.fn.mkdir(cache_path, "p")
-		local fp = io.open(cache_path .. "/shipwright_build.lua")
+		local fp = io.open(cache_path .. "/shipwright_build.lua", "w")
 		fp:write([===[local xdg = require("lushwal.utils.xdg")
 local colorscheme = require("lushwal")
 local lushwright = require("shipwright.transform.lush")
