@@ -2,7 +2,7 @@
 -- luacheck: ignore 113
 local lush = require("lush")
 local hsl = lush.hsl
-local xdg = require("dotfiles.utils.xdg")
+local xdg = require("lushwal.utils.xdg")
 
 -- Decode some JSON:
 local json_decode = function(data)
