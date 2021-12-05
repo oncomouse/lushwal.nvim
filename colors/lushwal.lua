@@ -21,7 +21,7 @@ local cache_dir = xdg("XDG_CONFIG_HOME") .. "/nvim/lua/lushwal"
 vim.fn.mkdir(cache_dir, "p")
 run(colorscheme,
 	lushwright.to_lua,
-	{append, {"return { setup = function() lush_apply(lushgroups) end, }"}},
+	{append, {"return { setup = function() lush_apply(lush_groups) end, }"}},
 	{overwrite, cache_dir .. "/cached.lua"})
 ]===])
 		fp:close()
