@@ -120,6 +120,11 @@ return lush(function()
 		Type({ fg = color3 }),
 		Typedef({ fg = color3 }),
 
+		SpellBad({ gui = "underline", fg = color5, sp = color5 }),
+		SpellLocal({ gui = "underline", fg = color6, sp = color6 }),
+		SpellCap({ gui = "underline", fg = color3, sp = color3 }),
+		SpellRare({ gui = "underline", fg = purple, sp = purple }),
+
 		DiagnosticError({ fg = color5 }),
 		DiagnosticWarn({ fg = color3 }),
 		DiagnosticInfo({ fg = color4 }),
@@ -181,10 +186,11 @@ return lush(function()
 		IndentBlanklineContextChar({ gui = "nocombine", fg = color7 }),
 		IndentBlanklineContextStart({ gui = "underline", sp = color7 }),
 
-		SpellBad({ gui = "underline", fg = color5, sp = color5 }),
-		SpellLocal({ gui = "underline", fg = color6, sp = color6 }),
-		SpellCap({ gui = "underline", fg = color3, sp = color3 }),
-		SpellRare({ gui = "underline", fg = purple, sp = purple }),
+		StatusLine({ fg = color7, bg = color8 }),
+		StatusLineNC({ fg = grey, bg = color8 }),
+		StatusLineTerm({ fg = color10, bg = color2 }),
+		StatusLineTermNC({ fg = color11, bg = color8 }),
+		User({ Normal }),
 
 		csClass({ fg = color3 }),
 		csAttribute({ fg = color3 }),
@@ -243,6 +249,7 @@ return lush(function()
 		NeomakeInfoSign({ fg = color8, bg = background }),
 		NeomakeError({ fg = color5, gui = "underline", sp = color5 }),
 		NeomakeWarning({ fg = color5, gui = "underline", sp = color5 }),
+
 		ALEErrorSign({ fg = color5, bg = background, gui = "bold" }),
 		ALEWarningSign({ fg = color3, bg = background, gui = "bold" }),
 		ALEInfoSign({ fg = color8, bg = background, gui = "bold" }),
@@ -326,11 +333,5 @@ return lush(function()
 		semshiSelected({ fg = background, bg = hsl("#ff875f") }),
 		semshiErrorSign({ fg = foreground, bg = hsl("#d70000") }),
 		semshiErrorChar({ fg = foreground, bg = hsl("#d70000") }),
-
-		StatusLine({ fg = color7, bg = color8 }),
-		StatusLineNC({ fg = grey, bg = color8 }),
-		StatusLineTerm({ fg = color10, bg = color2 }),
-		StatusLineTermNC({ fg = color11, bg = color8 }),
-		User({ Normal }),
 	}
 end)
