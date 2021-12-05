@@ -6,6 +6,7 @@ local ok, lushwal = pcall(require, "lushwal.cached")
 if ok then
 	lushwal.setup()
 else
+	vim.cmd([[packadd lush.nvim]])
 	require("lush")(require("lushwal"))
 	vim.cmd([[packadd shipwright.nvim]])
 	if vim.fn.exists(":Shipwright") ~= 0 then
