@@ -521,6 +521,32 @@ if config.addons.hop_nvim then
 	end)
 end
 
+-- lightspeed.nvim
+if config.addons.lightspeed_nvim then
+	vim.fn.cmd([[augroup lushwal_lightspeed
+autocmd!
+autocmd ColorScheme * lua require("lightspeed").init_highlight(true)
+augroup END]])
+	scheme = lush.extends({ scheme }).with(function()
+		return {
+			LightspeedLabel({ bg = color8, fg = color7 }),
+			LightspeedOverlapped({ bg = color8, fg = color7 }),
+			LightspeedLabelDistant({ bg = purple, fg = color7 }),
+			LightspeedLabelDistantOverlapped({ bg = purple, fg = color7 }),
+			LightspeedShortcut({ bg = color0, fg = brown, gui = "italic" }),
+			LightspeedShortcutOverlapped({ bg = color0, fg = brown, gui = "bold" }),
+			LightspeedMaskedChar({ bg = color0, fg = color1, gui = "undercurl" }),
+			LightspeedGreyWash({ bg = color0, fg = color01 }),
+			LightspeedUnlabeledMatch({ bg = color0, fg = color1, gui = "underline" }),
+			LightspeedOneCharMatch({ bg = color0, fg = color1, gui = "underline" }),
+			LightspeedUniqueChar({ bg = color0, fg = color15, gui = "strikethrough" }),
+			LightspeedPendingOpArea({ bg = color0, fg = color15, gui = "strikethrough" }),
+			LightspeedPendingChangeOpArea({ bg = color0, fg = color15, gui = "strikethrough" }),
+			LightspeedCursor({ fg = color0, bg = color7 }),
+		}
+	end)
+end
+
 -- lspsaga.nvim
 if config.addons.lspsaga_nvim then
 	scheme = lush.extends({ scheme }).with(function()
@@ -533,7 +559,7 @@ if config.addons.lspsaga_nvim then
 			LspSagaDefPreviewBorder({ fg = color10 }),
 			LspSagaCodeActionBorder({ fg = color6 }),
 			LspSagaFinderSelection({ fg = color8 }),
-			LspSagaCodeActionTitle({ fg = catppuccin91 }),
+			LspSagaCodeActionTitle({ fg = color6 }),
 			LspSagaCodeActionContent({ fg = purple }),
 			LspSagaSignatureHelpBorder({ fg = color5 }),
 			ReferencesCount({ fg = purple }),
