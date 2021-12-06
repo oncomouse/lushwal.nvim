@@ -450,11 +450,11 @@ if config.addons.bufferline_nvim then
 			BufferLineTab({ fg = grey, bg = color0 }),
 			BufferLineTabSelected({ fg = color5, bg = color6 }),
 			BufferLineTabClose({ fg = color5 }),
-			BufferLineIndicatorSelected({ fg = color3, bg = color0 }),
+			BufferLineIndicatorSelected({ fg = brown, bg = color0 }),
 			-- separators
-			-- BufferLineSeparator({ }),
-			-- BufferLineSeparatorVisible({ }),
-			-- BufferLineSeparatorSelected({ }),
+			BufferLineSeparator({ fg = background, bg = background }),
+			BufferLineSeparatorVisible({ fg = background, bg = background }),
+			BufferLineSeparatorSelected({ fg = background, bg = background }),
 			-- close buttons
 			BufferLineCloseButton({ fg = color8 }),
 			BufferLineCloseButtonVisible({ fg = color8 }),
@@ -484,7 +484,7 @@ if config.addons.dashboard_nvim then
 			DashboardShortCut({ fg = color2.li(40) }),
 			DashboardHeader({ fg = color3 }),
 			DashboardCenter({ fg = color10 }),
-			DashboardFooter({ fg = color3, gui = "italic" }),
+			DashboardFooter({ fg = brown, gui = "italic" }),
 		}
 	end)
 end
@@ -513,7 +513,7 @@ end
 if config.addons.hop_nvim then
 	scheme = lush.extends({ scheme }).with(function()
 		return {
-			HopNextKey({ bg = color0, fg = color3, gui = "bold,underline" }),
+			HopNextKey({ bg = color0, fg = brown, gui = "bold,underline" }),
 			HopNextKey1({ bg = color0, fg = color6, gui = "bold" }),
 			HopNextKey2({ bg = color0, fg = color10, gui = "bold,italic" }),
 			HopUnmatched({ bg = color0, fg = br_grey }),
