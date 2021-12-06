@@ -35,5 +35,44 @@ Set `vim.g.lushwal_configuration` (in Lua) or `g:lushwal_configuration` (in Vims
 ~~~lua
 {
 	compile_to_vimscript = true,
+	addons = {
+		ale = false,
+		barbar = false,
+		bufferline_nvim = false,
+		cmp_nvim = false,
+		coc_nvim = false,
+		dashboard_nvim = false,
+		fern_vim = false,
+		gitsigns_nvim = false,
+		hop_nvim = false,
+		indent_blankline_nvim = false,
+		lspsaga_nvim = false,
+		lsp_trouble_nvim = false,
+		native_lsp = true,
+		neogit = false,
+		neomake = false,
+		nerdtree = false,
+		nvim_tree_lua = false,
+		nvim_ts_rainbow = false,
+		semshi = false,
+		telescope_nvim = false,
+		treesitter = true,
+		vim_gitgutter = false,
+		vim_signify = false,
+		vim_sneak = false,
+		which_key_nvim = false,
+	}
 }
 ~~~
+
+### Addons
+
+lushwal supports a variety of popular plugins but most are disabled by default. The addons section contains a list of plugins that can be enabled. If you change your lushwal configuration, you will need to re-run `:LushwalCompile`.
+
+By default, treesitter and native_lsp support are enabled.
+
+## Source Material
+
+Plugins I don't use (which are most of the supported plugins) are adapted from [catppuccin](https://github.com/catppuccin/nvim), which has great plugin support and uses a configuration system similar to the one used by pywal.
+
+If you use lushwal and use one of the plugins I've sourced from catppuccin and the colors look weird, please submit a PR.

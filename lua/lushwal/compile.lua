@@ -38,6 +38,7 @@ lushwright.to_vimscript,
 ]===])
 			fp:close()
 			vim.cmd("Shipwright " .. cache_path .. "/shipwright_build.lua")
+			print("luawal vimscript compilation is done.")
 		else
 			error(
 				"Shipwright is required to compile this colorscheme. If you do not wish to compile, set vim.g.lushwal_configuration.compile_to_vimscript to false."
