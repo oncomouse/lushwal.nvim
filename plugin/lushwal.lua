@@ -5,4 +5,4 @@ _G.__lushwal_compile = function()
 	compile()
 end
 
-vim.cmd("command! LushwalCompile lua v:lua.__lushwal_compile()")
+vim.cmd("command! LushwalCompile lua v.lua:__lushwal_compile()")
