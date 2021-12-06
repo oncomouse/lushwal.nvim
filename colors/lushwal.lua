@@ -21,9 +21,9 @@ local lushwright = require("shipwright.transform.lush")
 local cache_dir = xdg("XDG_CONFIG_HOME") .. "/nvim/lua/lushwal"
 vim.fn.mkdir(cache_dir, "p")
 run(colorscheme,
-	lushwright.to_lua,
-	{append, {"return { setup = function() lush_apply(lush_groups) end, }"}},
-	{overwrite, cache_dir .. "/cached.lua"})
+	lushwright.to_vimscript,
+	{prepend, {"set background=dark", "if exists('g:colors_name')", "hi clear", "if exists('syntax_on')", "syntax reset", "endif", "endif", "let g:colors_name", "=", "'wal'"}}
+	{overwrite, cache_dir .. "/cached.vim"})
 ]===])
 		fp:close()
 		vim.cmd("Shipwright " .. cache_path .. "/shipwright_build.lua")
