@@ -6,7 +6,9 @@ local function lushwal_compile()
 		local cache_path = xdg("XDG_CACHE_HOME") .. "/lushwal"
 		vim.fn.mkdir(cache_path, "p")
 		local fp = io.open(cache_path .. "/shipwright_build.lua", "w")
-		fp:write([===[local xdg = require("lushwal.utils.xdg")
+		fp:write([===[vim.cmd("packadd shipwright.nvim")
+vim.cmd("packadd lush.nvim")
+local xdg = require("lushwal.utils.xdg")
 local colorscheme = require("lushwal")
 local lushwright = require("shipwright.transform.lush")
 
