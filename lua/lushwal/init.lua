@@ -125,6 +125,7 @@ return lush(function()
 		SpellCap({ gui = "underline", fg = color3, sp = color3 }),
 		SpellRare({ gui = "underline", fg = purple, sp = purple }),
 
+		-- Builtin LSP:
 		DiagnosticError({ fg = color5 }),
 		DiagnosticWarn({ fg = color3 }),
 		DiagnosticInfo({ fg = color4 }),
@@ -134,6 +135,7 @@ return lush(function()
 		DiagnosticUnderlineInfo({ DiagnosticInfo, sp = DiagnosticInfo.fg, gui = "underline" }),
 		DiagnosticUnderlineHint({ DiagnosticHint, sp = DiagnosticHint.fg, gui = "underline" }),
 
+		-- Treesitter:
 		TSAnnotation({ fg = color4 }),
 		TSAttribute({ fg = color4 }),
 		TSBoolean({ fg = color4 }),
@@ -182,6 +184,7 @@ return lush(function()
 		TSVariable({ fg = color3 }),
 		TSVariableBuiltin({ fg = color5 }),
 
+		-- indent-blankline.nvim
 		IndentBlanklineChar({ gui = "nocombine", fg = color8 }),
 		IndentBlanklineContextChar({ gui = "nocombine", fg = color7 }),
 		IndentBlanklineContextStart({ gui = "underline", sp = color7 }),
@@ -333,5 +336,42 @@ return lush(function()
 		semshiSelected({ fg = background, bg = color9.li(35) }),
 		semshiErrorSign({ fg = foreground, bg = color1.li(5) }),
 		semshiErrorChar({ fg = foreground, bg = color1.li(5) }),
+
+		-- barbar
+		BufferCurrent({ bg = color12, fg = color10 }),
+		BufferCurrentIndex({ bg = color12, fg = color9 }),
+		BufferCurrentMod({ bg = color12, fg = color8 }),
+		BufferCurrentSign({ bg = color12, fg = color9 }),
+		BufferCurrentTarget({ bg = color12, fg = color5 }),
+		BufferVisible({ bg = color14, fg = color10 }),
+		BufferVisibleIndex({ bg = color14, fg = color9 }),
+		BufferVisibleMod({ bg = color14, fg = color8 }),
+		BufferVisibleSign({ bg = color14, fg = color9 }),
+		BufferVisibleTarget({ bg = color14, fg = color5 }),
+		BufferInactive({ bg = color14, fg = color11 }),
+		BufferInactiveIndex({ bg = color14, fg = color11 }),
+		BufferInactiveMod({ bg = color14, fg = color8 }),
+		BufferInactiveSign({ bg = color14, fg = color9 }),
+		BufferInactiveTarget({ bg = color14, fg = color5 }),
+		BufferTabpages({ bg = color14 }),
+		BufferTabpage({ bg = color14, fg = color9 }),
+
+		-- bufferline.nvim
+		BufferLineFill({ bg = color13 }),
+		BufferLineBackground({ fg = color10 }),
+		BufferLineBufferVisible({ fg = color12 }),
+		BufferLineBufferSelected({ fg = color0, bg = color1 }),
+		BufferLineTab({ fg = color12, bg = color1 }),
+		BufferLineTabSelected({ fg = color5, bg = color9 }),
+		BufferLineTabClose({ fg = color5 }),
+		BufferLineIndicatorSelected({ fg = color6, bg = color1 }),
+		-- separators
+		-- BufferLineSeparator({ }),
+		-- BufferLineSeparatorVisible({ }),
+		-- BufferLineSeparatorSelected({ }),
+		-- close buttons
+		BufferLineCloseButton({ fg = color12 }),
+		BufferLineCloseButtonVisible({ fg = color12 }),
+		BufferLineCloseButtonSelected({ fg = color5, bg = color1 }),
 	}
 end)
