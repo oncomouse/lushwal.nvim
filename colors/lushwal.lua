@@ -22,7 +22,7 @@ local cache_dir = xdg("XDG_CONFIG_HOME") .. "/nvim/lua/lushwal"
 vim.fn.mkdir(cache_dir, "p")
 run(colorscheme,
 	lushwright.to_vimscript,
-	{prepend, {"set background=dark", "if exists('g:colors_name')", "hi clear", "if exists('syntax_on')", "syntax reset", "endif", "endif", "let g:colors_name", "=", "'wal'"}}
+	{prepend, {"set background=dark", "if exists('g:colors_name')", "hi clear", "if exists('syntax_on')", "syntax reset", "endif", "endif", "let g:colors_name", "=", "'wal'"}},
 	{overwrite, cache_dir .. "/cached.vim"})
 ]===])
 		fp:close()
