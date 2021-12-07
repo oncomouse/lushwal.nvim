@@ -178,8 +178,10 @@ local scheme = lush(function()
 end)
 
 -- Merge desired addons:
-for addon,_ in pairs(vim.tbl_filter(function(x) return x==true end, config.addons)) do
-	scheme = lush.merge({ scheme, require("lushwal.addons." .. addon)})
+for _, addon in pairs(vim.tbl_filter(function(x)
+	return config.addons[x] == true
+end, vim.tbl_keys(config.addons))) do
+	scheme = lush.merge({ scheme, require("lushwal.addons." .. addon) })
 end
 
 return scheme
