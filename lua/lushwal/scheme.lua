@@ -1,10 +1,9 @@
 -- luacheck: globals vim
 -- luacheck: ignore 113
+vim.cmd("packadd lush.nvim")
 local lush = require("lush")
 
-local config = require("lushwal.config")
 local colors = require("lushwal.colors")
-
 local scheme = lush(function()
 	if not colors then
 		return {}
@@ -178,6 +177,7 @@ local scheme = lush(function()
 end)
 
 -- Merge desired addons:
+local config = require("lushwal.config")
 for _, addon in pairs(vim.tbl_filter(function(x)
 	return config.addons[x] == true
 end, vim.tbl_keys(config.addons))) do
