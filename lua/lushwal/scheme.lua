@@ -110,16 +110,6 @@ local scheme = lush(function()
 
 		gitCommitOverflow({ fg = colors.color5 }),
 		gitCommitSummary({ fg = colors.color2 }),
-
-		markdownCode({ fg = colors.color2 }),
-		markdownCodeBlock({ fg = colors.color2 }),
-		markdownHeadingDelimiter({ fg = colors.color4 }),
-		markdownH1({ fg = colors.color4, gui = "bold" }),
-		markdownH2({ fg = colors.color4, gui = "bold" }),
-		markdownItalic({ fg = colors.purple, gui = "italic" }),
-		markdownBold({ fg = colors.color3, gui = "bold" }),
-		markdownCodeDelimiter({ fg = colors.brown, gui = "italic" }),
-		markdownError({ fg = colors.foreground, bg = colors.background }),
 	}
 end)
 

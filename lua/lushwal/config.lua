@@ -15,6 +15,7 @@ local default_configuration = {
 		lightspeed_nvim = false,
 		lspsaga_nvim = false,
 		lsp_trouble_nvim = false,
+		markdown = false,
 		native_lsp = true,
 		neogit = false,
 		neomake = false,
