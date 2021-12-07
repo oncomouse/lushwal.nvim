@@ -24,6 +24,7 @@ local default_configuration = {
 		semshi = false,
 		telescope_nvim = false,
 		treesitter = true,
+		vim_dirvish = false,
 		vim_gitgutter = false,
 		vim_signify = false,
 		vim_sneak = false,
