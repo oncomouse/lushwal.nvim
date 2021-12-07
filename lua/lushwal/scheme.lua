@@ -97,20 +97,6 @@ local scheme = lush(function()
 		StatusLineTermNC({ fg = colors.color11, bg = colors.color8 }),
 		User({ Normal }),
 
-		csClass({ fg = colors.color3 }),
-		csAttribute({ fg = colors.color3 }),
-		csModifier({ fg = colors.purple }),
-		csType({ fg = colors.color5 }),
-		csUnspecifiedStatement({ fg = colors.color4 }),
-		csContextualStatement({ fg = colors.purple }),
-		csNewDecleration({ fg = colors.color5 }),
-		cOperator({ fg = colors.color6 }),
-		cPreCondit({ fg = colors.purple }),
-
-		cssColor({ fg = colors.color6 }),
-		cssBraces({ fg = colors.foreground }),
-		cssClassName({ fg = colors.purple }),
-
 		DiffAdd({ fg = colors.color2, bg = colors.color8, gui = "bold" }),
 		DiffChange({ fg = colors.br_grey, bg = colors.color8 }),
 		DiffDelete({ fg = colors.color5, bg = colors.color8, gui = "bold" }),
@@ -125,54 +111,15 @@ local scheme = lush(function()
 		gitCommitOverflow({ fg = colors.color5 }),
 		gitCommitSummary({ fg = colors.color2 }),
 
-		htmlBold({ fg = colors.color3, gui = "bold" }),
-		htmlItalic({ fg = colors.purple, gui = "italic" }),
-		htmlTag({ fg = colors.color6 }),
-		htmlEndTag({ fg = colors.color6 }),
-		htmlArg({ fg = colors.color3 }),
-		htmlTagName({ fg = colors.foreground }),
-
-		javaScript({ fg = colors.foreground }),
-		javaScriptNumber({ fg = colors.color1 }),
-		javaScriptBraces({ fg = colors.foreground }),
-
-		jsonKeyword({ fg = colors.color2 }),
-		jsonQuote({ fg = colors.color2 }),
-
 		markdownCode({ fg = colors.color2 }),
 		markdownCodeBlock({ fg = colors.color2 }),
 		markdownHeadingDelimiter({ fg = colors.color4 }),
+		markdownH1({ fg = colors.color4, gui = "bold" }),
+		markdownH2({ fg = colors.color4, gui = "bold" }),
 		markdownItalic({ fg = colors.purple, gui = "italic" }),
 		markdownBold({ fg = colors.color3, gui = "bold" }),
 		markdownCodeDelimiter({ fg = colors.brown, gui = "italic" }),
 		markdownError({ fg = colors.foreground, bg = colors.background }),
-
-		typescriptParens({ fg = colors.foreground }),
-
-		phpComparison({ fg = colors.foreground }),
-		phpParent({ fg = colors.foreground }),
-		phpMemberSelector({ fg = colors.foreground }),
-
-		pythonRepeat({ fg = colors.purple }),
-		pythonOperator({ fg = colors.purple }),
-
-		rubyConstant({ fg = colors.color3 }),
-		rubySymbol({ fg = colors.color2 }),
-		rubyAttribute({ fg = colors.color4 }),
-		rubyInterpolation({ fg = colors.color2 }),
-		rubyInterpolationDelimiter({ fg = colors.brown }),
-		rubyStringDelimiter({ fg = colors.color2 }),
-		rubyRegexp({ fg = colors.color6 }),
-
-		sassidChar({ fg = colors.color5 }),
-		sassClassChar({ fg = colors.color1 }),
-		sassInclude({ fg = colors.purple }),
-		sassMixing({ fg = colors.purple }),
-		sassMixinName({ fg = colors.color4 }),
-
-		xmlTag({ fg = colors.color6 }),
-		xmlTagName({ fg = colors.foreground }),
-		xmlEndTag({ fg = colors.color6 }),
 	}
 end)
 
