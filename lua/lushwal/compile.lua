@@ -9,7 +9,7 @@ local function lushwal_compile()
 			local cache_path = xdg("XDG_CACHE_HOME") .. "/lushwal"
 			vim.fn.mkdir(cache_path, "p")
 			local fp = io.open(cache_path .. "/shipwright_build.lua", "w")
-			fp:write([===[vim.cmd("packadd shipwright.nvim")
+			fp:write([[vim.cmd("packadd shipwright.nvim")
 vim.cmd("packadd lush.nvim")
 local xdg = require("lushwal.utils.xdg")
 local colorscheme = require("lushwal.scheme")
@@ -32,10 +32,21 @@ lushwright.to_vimscript,
 		"endif",
 		"let g:colors_name = 'wal'",
 	},
-},
-{ overwrite, cache_dir .. "/lushwal.vim" }
+},]] ..
+(config.addons.lightspeed_nvim and [[
+{
+	prepend,
+	{
+		"augroup lushwal_lightspeed",
+		"autocmd!",
+		"autocmd ColorScheme * lua ok,ls = pcal(require, "lightspeed"); if ok then ls.init_highlight(true) end",
+		"augroup END",
+
+	}
+},]] or "") ..
+[[{ overwrite, cache_dir .. "/lushwal.vim" }
 )
-]===])
+]])
 			fp:close()
 			vim.cmd("Shipwright " .. cache_path .. "/shipwright_build.lua")
 			print("luawal vimscript compilation is done.")
