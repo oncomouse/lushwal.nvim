@@ -4,20 +4,22 @@
 local lush = require("lush")
 local colors = require("lushwal.colors")
 return lush(function()
+	local foreground = hsl("#FFFFFF")
+	local warmer = colors.color1.da(25)
+	local cooler = colors.color14
+	local mask = colors.purple.mix(colors.brown, 65).darken(15)
 	return {
-		LightspeedLabel({ bg = colors.color8, fg = colors.color7 }),
-		LightspeedOverlapped({ bg = colors.color8, fg = colors.color7 }),
-		LightspeedLabelDistant({ bg = colors.purple, fg = colors.color7 }),
-		LightspeedLabelDistantOverlapped({ bg = colors.purple, fg = colors.color7 }),
-		LightspeedShortcut({ bg = colors.color0, fg = colors.brown, gui = "italic" }),
-		LightspeedShortcutOverlapped({ bg = colors.color0, fg = colors.brown, gui = "bold" }),
-		LightspeedMaskedChar({ bg = colors.color0, fg = colors.color1, gui = "undercurl" }),
-		LightspeedGreyWash({ bg = colors.color0, fg = colors.color01 }),
-		LightspeedUnlabeledMatch({ bg = colors.color0, fg = colors.color1, gui = "underline" }),
-		LightspeedOneCharMatch({ bg = colors.color0, fg = colors.color1, gui = "underline" }),
-		LightspeedUniqueChar({ bg = colors.color0, fg = colors.color15, gui = "strikethrough" }),
-		LightspeedPendingOpArea({ bg = colors.color0, fg = colors.color15, gui = "strikethrough" }),
-		LightspeedPendingChangeOpArea({ bg = colors.color0, fg = colors.color15, gui = "strikethrough" }),
-		LightspeedCursor({ fg = colors.color0, bg = colors.color7 }),
+		LightspeedLabel({ fg = warmer, gui = "bold,underline" }),
+		LightspeedOverlapped({ fg = warmer.darken(15), gui = "underline" }),
+		LightspeedLabelDistant({ fg = cooler, gui = "bold,underline" }),
+		LightspeedLabelDistantOverlapped({ fg = cooler.darken(15), gui = "underline" }),
+		LightspeedShortcut({ bg = warmer, fg = foreground, gui = "bold,underline" }),
+		LightspeedShortcutOverlapped({ LightspeedShortcut, gui = "underline" }),
+		LightspeedMaskedChar({ fg = mask, gui = "none" }),
+		LightspeedGreyWash({ fg = colors.br_grey }),
+		LightspeedUnlabeledMatch({ fg = foreground, gui = "bold" }),
+		LightspeedOneCharMatch({ LightspeedShortcut, gui = "none" }),
+		LightspeedUniqueChar({ LightspeedUnlabeledMatch }),
+		LightspeedPendingOpArea({ LightspeedShortcut, gui = "underline" }),
 	}
 end)
