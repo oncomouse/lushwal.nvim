@@ -32,19 +32,8 @@ lushwright.to_vimscript,
 		"endif",
 		"let g:colors_name = 'wal'",
 	},
-},]] ..
-(config.addons.lightspeed_nvim and [[
-{
-	prepend,
-	{
-		"augroup lushwal_lightspeed",
-		"autocmd!",
-		"autocmd ColorScheme * lua ok,ls = pcall(require, 'lightspeed'); if ok then ls.init_highlight(true) end",
-		"augroup END",
-
-	}
-},]] or "") ..
-[[{ overwrite, cache_dir .. "/lushwal.vim" }
+},
+{ overwrite, cache_dir .. "/lushwal.vim" }
 )
 ]])
 			fp:close()
