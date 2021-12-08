@@ -5,9 +5,9 @@ local lush = require("lush")
 local colors = require("lushwal.colors")
 return lush(function()
 	local foreground = hsl("#FFFFFF")
-	local warmer = colors.color1.da(25)
+	local warmer = colors.color1.darken(25)
 	local cooler = colors.color14
-	local mask = colors.purple.mix(colors.brown, 65).darken(15)
+	local mask = colors.color5.darken(15)
 	return {
 		LightspeedLabel({ fg = warmer, gui = "bold,underline" }),
 		LightspeedOverlapped({ fg = warmer.darken(15), gui = "underline" }),
