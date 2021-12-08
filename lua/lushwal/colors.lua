@@ -16,7 +16,7 @@ if ok then
 	local foreground = hsl(colors.special.foreground)
 	local background = hsl(colors.special.background)
 	local cursor = hsl(colors.special.cursor)
-	local color0 = hsl(colors.colors.color1)
+	local color0 = hsl(colors.colors.color0)
 	local color1 = hsl(colors.colors.color1)
 	local color2 = hsl(colors.colors.color2)
 	local color3 = hsl(colors.colors.color3)
