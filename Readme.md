@@ -67,8 +67,6 @@ Set `vim.g.lushwal_configuration` (in Lua) or `g:lushwal_configuration` (in Vims
 }
 ~~~
 
-**Note:** You must set `vim.g.lushwal_configuration` *before* you set `colorscheme lushwal`. If you set it in a `config` function in `packer.nvim`, for instance, it will be too late. I'm welcome to PRs on how to fix this, if anyone has thoughts.
-
 ### Addons
 
 lushwal supports a variety of popular plugins but most are disabled by default. The addons section contains a list of plugins that can be enabled. If you change your lushwal configuration, you will need to re-run `:LushwalCompile`.
