@@ -12,6 +12,6 @@ vim.defer_fn(function()
 	local config = require("lushwal").config
 	if config.compile_to_vimscript then
 		require("lush")(require("lushwal").scheme)
-		require("lushwal.compile")()
+		require("lushwal").compile()
 	end
 end, 1)
