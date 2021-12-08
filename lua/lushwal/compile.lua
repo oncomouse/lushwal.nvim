@@ -39,7 +39,7 @@ lushwright.to_vimscript,
 	{
 		"augroup lushwal_lightspeed",
 		"autocmd!",
-		"autocmd ColorScheme * lua ok,ls = pcal(require, "lightspeed"); if ok then ls.init_highlight(true) end",
+		"autocmd ColorScheme * lua ok,ls = pcal(require, 'lightspeed'); if ok then ls.init_highlight(true) end",
 		"augroup END",
 
 	}
