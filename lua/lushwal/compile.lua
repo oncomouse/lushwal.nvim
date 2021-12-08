@@ -1,6 +1,6 @@
 -- luacheck: globals vim
-local config = require("lushwal.config")
 local function lushwal_compile()
+	local config = require("lushwal").config
 	if config.compile_to_vimscript then
 		vim.cmd([[packadd lush.nvim]])
 		vim.cmd([[packadd shipwright.nvim]])
@@ -12,7 +12,7 @@ local function lushwal_compile()
 			fp:write([[vim.cmd("packadd shipwright.nvim")
 vim.cmd("packadd lush.nvim")
 local xdg = require("lushwal.utils.xdg")
-local colorscheme = require("lushwal.scheme")
+local colorscheme = require("lushwal").scheme
 local lushwright = require("shipwright.transform.lush")
 
 local cache_dir = xdg("XDG_CONFIG_HOME") .. "/nvim/colors"

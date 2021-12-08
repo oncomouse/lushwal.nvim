@@ -1,5 +1,5 @@
 -- luacheck: globals vim
-local default_configuration = {
+return {
 	compile_to_vimscript = true,
 	addons = {
 		ale = false,
@@ -30,11 +30,5 @@ local default_configuration = {
 		vim_signify = false,
 		vim_sneak = false,
 		which_key_nvim = false,
-	}
+	},
 }
-
-return(vim.tbl_deep_extend(
-	"force",
-	default_configuration,
-	vim.g.lushwal_configuration or {}
-))
