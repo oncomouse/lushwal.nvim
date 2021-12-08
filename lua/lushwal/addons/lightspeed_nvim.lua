@@ -4,7 +4,7 @@
 local lush = require("lush")
 local colors = require("lushwal.colors")
 return lush(function()
-	local foreground = hsl("#FFFFFF")
+	local foreground = lush.hsl("#FFFFFF")
 	local warmer = colors.color1.darken(25)
 	local cooler = colors.color14
 	local mask = colors.color5.darken(15)
