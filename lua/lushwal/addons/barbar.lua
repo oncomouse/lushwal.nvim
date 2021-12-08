@@ -5,11 +5,11 @@ local lush = require("lush")
 local colors = require("lushwal.colors")
 return lush(function()
 	return {
-		BufferCurrent({ bg = colors.grey, fg = colors.color7 }),
-		BufferCurrentIndex({ bg = colors.grey, fg = colors.color6 }),
-		BufferCurrentMod({ bg = colors.grey, fg = colors.color3 }),
-		BufferCurrentSign({ bg = colors.grey, fg = colors.color6 }),
-		BufferCurrentTarget({ bg = colors.grey, fg = colors.color5 }),
+		BufferCurrent({ bg = colors.color8, fg = colors.color7 }),
+		BufferCurrentIndex({ bg = colors.color8, fg = colors.color6 }),
+		BufferCurrentMod({ bg = colors.color8, fg = colors.color5 }),
+		BufferCurrentSign({ bg = colors.color8, fg = colors.color6 }),
+		BufferCurrentTarget({ bg = colors.color8, fg = colors.color3 }),
 		BufferVisible({ bg = colors.color0, fg = colors.color7 }),
 		BufferVisibleIndex({ bg = colors.color0, fg = colors.color6 }),
 		BufferVisibleMod({ bg = colors.color0, fg = colors.color3 }),
@@ -22,5 +22,6 @@ return lush(function()
 		BufferInactiveTarget({ bg = colors.color0, fg = colors.color5 }),
 		BufferTabpages({ bg = colors.color0 }),
 		BufferTabpage({ bg = colors.color0, fg = colors.color6 }),
+		BufferTabpageFill({ bg = colors.color0, fg = colors.br_grey })
 	}
 end)
