@@ -41,7 +41,7 @@ lushwright.to_vimscript,
 cache_dir = xdg("XDG_CONFIG_HOME") .. "/nvim/autoload/lightline/colorscheme"
 vim.fn.mkdir(cache_dir, "p")
 run(
-	require("lushwal.addons.lightline.scheme"),
+	require("lushwal.addons.lightline"),
 	{ barwright.to_lightline, { theme_name = "lushwal" } },
 	{ overwrite, cache_dir .. "/lushwal.vim" }
 )
