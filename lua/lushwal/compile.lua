@@ -9,7 +9,7 @@ local function lushwal_compile()
 			local cache_path = xdg("XDG_CACHE_HOME") .. "/lushwal"
 			vim.fn.mkdir(cache_path, "p")
 			local fp = io.open(cache_path .. "/shipwright_build.lua", "w")
-			fp:write([[vim.cmd("packadd shipwright.nvim")
+			local script = [[vim.cmd("packadd shipwright.nvim")
 vim.cmd("packadd lush.nvim")
 local xdg = require("lushwal.utils.xdg")
 local colorscheme = require("lushwal").scheme
@@ -35,7 +35,19 @@ lushwright.to_vimscript,
 },
 { overwrite, cache_dir .. "/lushwal.vim" }
 )
-]])
+]]
+			if config.addons.lightline then
+				script = script .. [[local barwright = require("shipwright.transform.bars")
+cache_dir = xdg("XDG_CONFIG_HOME") .. "/nvim/autoload/lightline/colorscheme"
+vim.fn.mkdir(cache_dir, "p")
+run(
+	require("lushwal.addons.lightline.scheme"),
+	{ barwright.to_lightline, { theme_name = "lushwal" } },
+	{ overwrite, cache_dir .. "/lushwal.vim" }
+)
+				]]
+			end
+			fp:write(script)
 			fp:close()
 			vim.cmd("Shipwright " .. cache_path .. "/shipwright_build.lua")
 			print("[Lushwal.nvim] Vimscript compilation is done.")

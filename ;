@@ -1,0 +1,26 @@
+-- vim.cmd("packadd shipwright.nvim")
+-- vim.cmd("packadd lush.nvim")
+-- local xdg = require("lushwal.utils.xdg")
+-- local colorscheme = require("lushwal").scheme
+-- local lushwright = require("shipwright.transform.lush")
+
+-- local cache_dir = xdg("XDG_CONFIG_HOME") .. "/nvim/colors"
+-- vim.fn.mkdir(cache_dir, "p")
+-- run(
+-- colorscheme,
+-- lushwright.to_vimscript,
+-- {
+-- 	prepend,
+-- 	{
+-- 		"set background=dark",
+-- 		"if exists('g:colors_name')",
+-- 		"hi clear",
+-- 		"if exists('syntax_on')",
+-- 		"syntax reset",
+-- 		"endif",
+-- 		"endif",
+-- 		"let g:colors_name = 'wal'",
+-- 	},
+-- },
+-- { overwrite, cache_dir .. "/lushwal.vim" }
+-- )
