@@ -94,7 +94,6 @@ local lightline_theme = {
 		error = { { background, error } },
 	},
 }
-
 -- Use lightlines helper functions to correct cterm holes in our theme.
 local ok, lightline_theme_filled = pcall(vim.fn["lightline#colorscheme#fill"], lightline_theme)
 
