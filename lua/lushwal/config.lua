@@ -15,7 +15,7 @@ return {
 		lightspeed_nvim = false,
 		lspsaga_nvim = false,
 		lsp_trouble_nvim = false,
-		lualine_nvim = false,
+		lualine = false,
 		markdown = false,
 		native_lsp = true,
 		neogit = false,
