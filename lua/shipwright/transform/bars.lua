@@ -10,6 +10,12 @@ local to_lightline = function(lightline_configuration, config)
 	return lines
 end
 
+local to_lualine = function(lualine_configuration, config)
+	config = config or {}
+	return vim.split("return " .. vim.inspect(lualine_configuration), "\n")
+end
+
 return {
 	to_lightline = to_lightline,
+	to_lualine = to_lualine,
 }
