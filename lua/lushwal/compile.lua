@@ -1,4 +1,22 @@
 -- luacheck: globals vim
+
+local function bar_buildscript(addon)
+	local ok, bar_transforms = pcall("shipwright.transform.bars")
+	if ok and bar_transforms[addon] then
+		return [[local barwright = require("shipwright.transform.bars")
+cache_dir = xdg("XDG_CONFIG_HOME") .. "/nvim/autoload/lightline/colorscheme"
+vim.fn.mkdir(cache_dir, "p")
+run(
+	require("lushwal.addons.lightline"),
+	{ barwright.to_]] .. addon .. [[, { theme_name = "lushwal" } },
+	{ overwrite, cache_dir .. "/lushwal.vim" }
+)
+]]
+	else
+		return ""
+	end
+end
+
 local function lushwal_compile()
 	local config = require("lushwal").config
 	if config.compile_to_vimscript then
@@ -36,16 +54,12 @@ lushwright.to_vimscript,
 { overwrite, cache_dir .. "/lushwal.vim" }
 )
 ]]
-			if config.addons.lightline then
-				script = script .. [[local barwright = require("shipwright.transform.bars")
-cache_dir = xdg("XDG_CONFIG_HOME") .. "/nvim/autoload/lightline/colorscheme"
-vim.fn.mkdir(cache_dir, "p")
-run(
-	require("lushwal.addons.lightline"),
-	{ barwright.to_lightline, { theme_name = "lushwal" } },
-	{ overwrite, cache_dir .. "/lushwal.vim" }
-)
-				]]
+			local transformable_bars = {
+				"lightline",
+				"lualine",
+			}
+			for _,bar in pairs(transformable_bars) do
+				script = script .. bar_buildscript(bar)
 			end
 			fp:write(script)
 			fp:close()
