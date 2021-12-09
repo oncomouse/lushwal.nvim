@@ -21,7 +21,11 @@ setmetatable(M, {
 			for _, addon in pairs(vim.tbl_filter(function(x)
 				return config.addons[x] == true
 			end, vim.tbl_keys(config.addons))) do
-				scheme = lush.merge({ scheme, require("lushwal.addons." .. addon) })
+				if addon == "lightline" then
+					require("lushwal.addons.lightline")
+				else
+					scheme = lush.merge({ scheme, require("lushwal.addons." .. addon) })
+				end
 			end
 			return scheme
 		else

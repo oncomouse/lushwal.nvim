@@ -11,6 +11,7 @@ return {
 		gitsigns_nvim = false,
 		hop_nvim = false,
 		indent_blankline_nvim = false,
+		lightline = false,
 		lightspeed_nvim = false,
 		lspsaga_nvim = false,
 		lsp_trouble_nvim = false,

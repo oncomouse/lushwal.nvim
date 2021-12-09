@@ -1,12 +1,12 @@
 -- luacheck: globals vim
-local colors = require("lushwal.base")
+local colors = require("lushwal.colors")
 local red = colors.color1
 local green = colors.color2
 local blue = colors.color4
 
 local pink = colors.color5
 local olive = colors.color2
-local navy = colors.color4.darken(15)
+local navy = blue.darken(15)
 
 local orange = colors.color3
 local purple = colors.purple
@@ -71,33 +71,12 @@ lightline_theme.tabline.middle = { { tabline_bg, tabline_bg } }
 lightline_theme.tabline.right = vim.fn.copy(lightline_theme.normal.right)
 lightline_theme.normal.error = { { background, error } }
 
--- local lightline_theme = {
---    normal = {
---      left = {
---        {theme.Normal.fg.hex, theme.Normal.bg.hex},
---      },
---      middle = {
---        {theme.Normal.fg.hex, theme.Normal.bg.hex},
---      },
---      right = {
---        {theme.Normal.fg.hex, theme.Normal.bg.hex},
---      },
---    },
---    insert = {
---      left = {
---        {theme.Normal.bg.hex, theme.Normal.fg.hex},
---      },
---      middle = {
---        {theme.Normal.bg.hex, theme.Normal.fg.hex},
---      },
---      right = {
---        {theme.Normal.bg.hex, theme.Normal.fg.hex},
---      },
---    },
---  }
-
 -- Use lightlines helper functions to correct cterm holes in our theme.
-local lightline_theme_filled = vim.fn["lightline#colorscheme#fill"](lightline_theme)
+local ok, lightline_theme_filled = pcall(vim.fn["lightline#colorscheme#fill"], lightline_theme)
 
 -- define our theme for lightline to find
-vim.g["lightline#colorscheme#lightline_two_files#palette"] = lightline_theme_filled
+if ok then
+	vim.g["lightline#colorscheme#lightline_two_files#palette"] = lightline_theme_filled
+end
+
+return lightline_theme_filled
