@@ -9,6 +9,9 @@ end
 
 local M = {}
 M.compile = require("lushwal.compile")
+local addons_to_skip = {
+	"lightline",
+}
 setmetatable(M, {
 	__index = function(lushwal, key)
 		if key == "config" then
@@ -21,9 +24,7 @@ setmetatable(M, {
 			for _, addon in pairs(vim.tbl_filter(function(x)
 				return config.addons[x] == true
 			end, vim.tbl_keys(config.addons))) do
-				if addon == "lightline" then
-					require("lushwal.addons.lightline")
-				else
+				if not vim.tbl_contains(addons_to_skip, addon) then
 					scheme = lush.merge({ scheme, require("lushwal.addons." .. addon) })
 				end
 			end

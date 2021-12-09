@@ -1,22 +1,22 @@
 -- luacheck: globals vim
 local colors = require("lushwal.colors")
-local red = colors.color1
-local green = colors.color2
-local blue = colors.color4
+local red = colors.color1.hex
+local green = colors.color2.hex
+local blue = colors.color4.hex
 
-local pink = colors.color5
-local olive = colors.color2
-local navy = blue.darken(15)
+-- local pink = colors.color5.hex
+-- local olive = colors.color2.hex
+-- local navy = colors.color4.darken(15).hex
 
-local orange = colors.color3
-local purple = colors.purple
-local aqua = colors.color6
+-- local orange = colors.color3.hex
+local purple = colors.purple.hex
+local aqua = colors.color6.hex
 
 -- Basics:
-local foreground = colors.foreground
-local background = colors.background
-local window = colors.color7
-local status = colors.color8
+local foreground = colors.foreground.hex
+local background = colors.background.hex
+local window = colors.color7.hex
+local status = colors.color8.hex
 local error = "#5f0000"
 
 -- Tabline:
@@ -32,51 +32,84 @@ local statusline_active_bg = background
 local statusline_inactive_fg = window
 local statusline_inactive_bg = status
 
--- Visual:
-local visual_fg = background
-local visual_bg = purple
-local lightline_theme = { normal = {}, inactive = {}, insert = {}, replace = {}, visual = {}, tabline = {} }
-lightline_theme.normal.left = {
-	{ foreground, background },
-	{ statusline_active_fg, status },
-	{ statusline_active_fg, statusline_active_bg },
+local lightline_theme = {
+	normal = {
+		left = {
+			{ background, green, "bold" },
+			{ statusline_active_fg, status },
+			{ statusline_active_fg, statusline_active_bg },
+		},
+		middle = { { statusline_active_fg, statusline_active_bg } },
+		right = {
+			{ foreground, background },
+			{ statusline_active_fg, status },
+			{ statusline_active_fg, statusline_active_bg },
+		},
+	},
+
+	inactive = {
+		left = {
+			{ statusline_inactive_fg, statusline_inactive_bg },
+			{ statusline_inactive_fg, statusline_inactive_bg },
+		},
+		middle = { { statusline_inactive_fg, statusline_inactive_bg } },
+		right = {
+			{ statusline_inactive_fg, statusline_inactive_bg },
+			{ statusline_inactive_fg, statusline_inactive_bg },
+		},
+	},
+
+	insert = {
+		left = {
+			{ background, blue, "bold" },
+			{ statusline_active_fg, status },
+			{ statusline_active_fg, statusline_active_bg },
+		},
+	},
+
+	replace = {
+		left = {
+			{ background, red, "bold" },
+			{ statusline_active_fg, status },
+			{ statusline_active_fg, statusline_active_bg },
+		},
+	},
+
+	visual = {
+		left = {
+			{ background, purple, "bold" },
+			{ statusline_active_fg, status },
+			{ statusline_active_fg, statusline_active_bg },
+		},
+	},
+	tabline = {
+		left = { { tabline_inactive_fg, tabline_inactive_bg } },
+		tabsel = { { tabline_active_fg, tabline_active_bg } },
+		middle = { { tabline_bg, tabline_bg } },
+		right = {
+			{ foreground, background },
+			{ statusline_active_fg, status },
+			{ statusline_active_fg, statusline_active_bg },
+		},
+		error = { { background, error } },
+	},
 }
-lightline_theme.normal.right = {
-	{ foreground, background },
-	{ statusline_active_fg, status },
-	{ statusline_active_fg, statusline_active_bg },
-}
-lightline_theme.normal.middle = { { statusline_active_fg, statusline_active_bg } }
-lightline_theme.inactive.right = { { foreground, background }, { foreground, background } }
-lightline_theme.inactive.left = { { foreground, background }, { foreground, background } }
-lightline_theme.inactive.middle = { { foreground, background } }
-lightline_theme.insert.left = {
-	{ background, blue },
-	{ statusline_active_fg, status },
-	{ statusline_active_fg, statusline_active_bg },
-}
-lightline_theme.replace.left = {
-	{ background, red },
-	{ statusline_active_fg, status },
-	{ statusline_active_fg, statusline_active_bg },
-}
-lightline_theme.visual.left = {
-	{ visual_fg, visual_bg },
-	{ statusline_active_fg, status },
-	{ statusline_active_fg, statusline_active_bg },
-}
-lightline_theme.tabline.left = { { tabline_inactive_fg, tabline_inactive_bg } }
-lightline_theme.tabline.tabsel = { { tabline_active_fg, tabline_active_bg } }
-lightline_theme.tabline.middle = { { tabline_bg, tabline_bg } }
-lightline_theme.tabline.right = vim.fn.copy(lightline_theme.normal.right)
-lightline_theme.normal.error = { { background, error } }
 
 -- Use lightlines helper functions to correct cterm holes in our theme.
 local ok, lightline_theme_filled = pcall(vim.fn["lightline#colorscheme#fill"], lightline_theme)
 
 -- define our theme for lightline to find
 if ok then
-	vim.g["lightline#colorscheme#lightline_two_files#palette"] = lightline_theme_filled
-end
+	vim.g["lightline#colorscheme#lushwal#palette"] = lightline_theme_filled
+	vim.schedule(function()
+		-- lightline#colorscheme() has a side effect of not always
+		-- applying updates until after leaving insert mode.
+		-- vim.fn["lightline#colorscheme"]()
 
-return lightline_theme_filled
+		-- this will apply more uniforming across all modes, but may have
+		-- unacceptable performance impacts.
+		vim.fn['lightline#disable']()
+		vim.fn['lightline#enable']()
+	end)
+	return lightline_theme_filled
+end

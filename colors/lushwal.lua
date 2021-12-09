@@ -10,6 +10,14 @@ require("lush")(require("lushwal").scheme)
 -- packer.nvim config function). We reload the colorscheme for the same reasons.
 vim.defer_fn(function()
 	local config = require("lushwal").config
+	-- Load lightline configuration:
+	if require("lushwal").config.addons.lightline then
+		vim.g.lightline = {
+			colorscheme = "lushwal",
+		}
+		require("lushwal.addons.lightline")
+	end
+	-- Compile:
 	if config.compile_to_vimscript then
 		require("lush")(require("lushwal").scheme)
 		require("lushwal").compile()
