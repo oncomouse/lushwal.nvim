@@ -11,6 +11,7 @@ local M = {}
 M.compile = require("lushwal.compile")
 local addons_to_skip = {
 	"lightline",
+	"lualine",
 }
 setmetatable(M, {
 	__index = function(lushwal, key)
@@ -25,7 +26,11 @@ setmetatable(M, {
 				return config.addons[x] == true
 			end, vim.tbl_keys(config.addons))) do
 				if not vim.tbl_contains(addons_to_skip, addon) then
-					scheme = lush.merge({ scheme, require("lushwal.addons." .. addon) })
+					xpcall(function()
+						scheme = lush.merge({ scheme, require("lushwal.addons." .. addon) })
+					end, function(err)
+						error("There was an error loading lushwal.addons." .. addon .. "\n\n Error: ".. err)
+					end)
 				end
 			end
 			return scheme
