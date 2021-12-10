@@ -11,6 +11,6 @@ return lush(function()
 		rainbowcol4({ bg = colors.color0, fg = colors.color6 }),
 		rainbowcol5({ bg = colors.color0, fg = colors.color1 }),
 		rainbowcol6({ bg = colors.color0, fg = colors.color2.li(40) }),
-		rainbowcol7({ bg = colors.color0, fg = colors.color15 }),
+		rainbowcol7({ bg = colors.color0, fg = colors.purple }),
 	}
 end)
