@@ -3,12 +3,6 @@ local colors = require("lushwal.colors")
 local red = colors.color1.hex
 local green = colors.color2.hex
 local blue = colors.color4.hex
-
--- local pink = colors.color5.hex
--- local olive = colors.color2.hex
--- local navy = colors.color4.darken(15).hex
-
--- local orange = colors.color3.hex
 local purple = colors.purple.hex
 local aqua = colors.color6.hex
 
@@ -18,6 +12,22 @@ local background = colors.background.hex
 local window = colors.color7.hex
 local status = colors.color8.hex
 local error = "#5f0000"
+
+-- Normal Mode:
+local normal_bg = green
+local normal_fg = background
+
+-- Insert Mode:
+local insert_bg = blue
+local insert_fg = background
+
+-- Visual Mode:
+local visual_bg = purple
+local visual_fg = background
+
+-- Replace Mode:
+local replace_bg = red
+local replace_fg = background
 
 -- Tabline:
 local tabline_bg = window
@@ -35,7 +45,7 @@ local statusline_inactive_bg = status
 local lightline_theme = {
 	normal = {
 		left = {
-			{ background, green, "bold" },
+			{ normal_fg, normal_bg, "bold" },
 			{ statusline_active_fg, status },
 			{ statusline_active_fg, statusline_active_bg },
 		},
@@ -61,7 +71,7 @@ local lightline_theme = {
 
 	insert = {
 		left = {
-			{ background, blue, "bold" },
+			{ insert_fg, insert_bg, "bold" },
 			{ statusline_active_fg, status },
 			{ statusline_active_fg, statusline_active_bg },
 		},
@@ -69,7 +79,7 @@ local lightline_theme = {
 
 	replace = {
 		left = {
-			{ background, red, "bold" },
+			{ replace_fg, replace_bg, "bold" },
 			{ statusline_active_fg, status },
 			{ statusline_active_fg, statusline_active_bg },
 		},
@@ -77,7 +87,7 @@ local lightline_theme = {
 
 	visual = {
 		left = {
-			{ background, purple, "bold" },
+			{ visual_fg, visual_bg, "bold" },
 			{ statusline_active_fg, status },
 			{ statusline_active_fg, statusline_active_bg },
 		},
