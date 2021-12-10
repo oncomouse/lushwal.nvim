@@ -35,28 +35,28 @@ local statusline_inactive_bg = colors.color8.hex
 return {
 	visual = {
 		a = { fg = visual_fg, bg = visual_bg, gui = "bold" },
-		b = { fg = visual_bg, colors.color8.hex },
+		b = { fg = visual_bg, bg = colors.color8.hex },
 	},
 	replace = {
 		a = { fg = replace_fg, bg = replace_bg, gui = "bold" },
-		b = { fg = replace_bg, colors.color8.hex },
+		b = { fg = replace_bg, bg = colors.color8.hex },
 	},
 	command = {
 		a = { fg = command_fg, bg = command_bg, gui = "bold" },
-		b = { fg = command_bg, colors.color8.hex },
+		b = { fg = command_bg, bg = colors.color8.hex },
 	},
 	inactive = {
-		a = { fg = statusline_inactive_fg, bg = statusline_inactive_bg, gui = "bold" },
+		a = { fg = statusline_inactive_fg, bg = statusline_inactive_bg },
 		b = { fg = statusline_inactive_fg, bg = statusline_inactive_bg },
 		c = { fg = statusline_inactive_fg, bg = statusline_inactive_bg },
 	},
 	normal = {
 		a = { fg = normal_fg, bg = normal_bg, gui = "bold" },
-		b = { fg = normal_bg, colors.color8.hex },
+		b = { fg = normal_bg, bg = colors.color8.hex },
 		c = { fg = statusline_active_fg, bg = statusline_active_bg },
 	},
 	insert = {
 		a = { fg = insert_fg, bg = insert_bg, gui = "bold" },
-		b = { fg = insert_bg, colors.color8.hex },
+		b = { fg = insert_bg, bg = colors.color8.hex },
 	},
 }
