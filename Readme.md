@@ -42,6 +42,7 @@ Set `vim.g.lushwal_configuration` (in Lua) or `g:lushwal_configuration` (in Vims
 		coc_nvim = false,
 		dashboard_nvim = false,
 		fern_vim = false,
+		gina = false,
 		gitsigns_nvim = false,
 		hop_nvim = false,
 		indent_blankline_nvim = false,

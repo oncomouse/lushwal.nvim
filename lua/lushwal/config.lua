@@ -8,6 +8,7 @@ return {
 		coc_nvim = false,
 		dashboard_nvim = false,
 		fern_vim = false,
+		gina = false,
 		gitsigns_nvim = false,
 		hop_nvim = false,
 		indent_blankline_nvim = false,
