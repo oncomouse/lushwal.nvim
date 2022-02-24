@@ -3,6 +3,7 @@
 local lush = require("lush")
 local colors = require("lushwal.colors")
 return lush(function()
+	-- selene: allow(undefined_variable)
 	return {
 		mkdCode({ fg = colors.color2 }),
 		mkdCodeBlock({ fg = colors.color2 }),
@@ -25,5 +26,6 @@ return lush(function()
 		markdownError({ mkdError }),
 
 	}
+	-- selene: deny(undefined_variable)
 end)
 

@@ -4,6 +4,7 @@
 local lush = require("lush")
 local colors = require("lushwal.colors")
 return lush(function()
+	-- selene: allow(undefined_variable)
 	return {
 		NeogitBranch({ fg = colors.color1 }),
 		NeogitRemote({ fg = colors.color1 }),
@@ -13,4 +14,5 @@ return lush(function()
 		NeogitDiffDeleteHighlight({ fg = colors.color5, bg = colors.color0 }),
 		NeogitDiffAddHighlight({ fg = colors.color6, bg = colors.color0 }),
 	}
+	-- selene: deny(undefined_variable)
 end)

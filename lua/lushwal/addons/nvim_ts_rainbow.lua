@@ -4,6 +4,7 @@
 local lush = require("lush")
 local colors = require("lushwal.colors")
 return lush(function()
+	-- selene: allow(undefined_variable)
 	return {
 		rainbowcol1({ bg = colors.color0, fg = colors.color5 }),
 		rainbowcol2({ bg = colors.color0, fg = colors.color10 }),
@@ -13,4 +14,5 @@ return lush(function()
 		rainbowcol6({ bg = colors.color0, fg = colors.color2.li(40) }),
 		rainbowcol7({ bg = colors.color0, fg = colors.purple }),
 	}
+	-- selene: deny(undefined_variable)
 end)

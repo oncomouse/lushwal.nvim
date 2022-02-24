@@ -3,6 +3,7 @@
 local lush = require("lush")
 local colors = require("lushwal.lua")
 return lush(function()
+	-- selene: allow(undefined_variable)
 	return {
 		csClass({ fg = colors.color3 }),
 		csAttribute({ fg = colors.color3 }),
@@ -59,4 +60,5 @@ return lush(function()
 		xmlTagName({ fg = colors.foreground }),
 		xmlEndTag({ fg = colors.color6 }),
 	}
+	-- selene: deny(undefined_variable)
 end)

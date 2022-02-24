@@ -4,6 +4,7 @@
 local lush = require("lush")
 local colors = require("lushwal.colors")
 return lush(function()
+	-- selene: allow(undefined_variable)
 	return {
 		WhichKey({ fg = colors.color2.li(40) }),
 		WhichKeyGroup({ fg = colors.color6 }),
@@ -13,4 +14,5 @@ return lush(function()
 		WhichKeyFloat({ bg = colors.color0 }),
 		WhichKeyValue({ fg = colors.br_grey }),
 	}
+	-- selene: deny(undefined_variable)
 end)

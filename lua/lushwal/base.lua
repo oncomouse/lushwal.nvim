@@ -1,5 +1,3 @@
--- luacheck: globals vim
--- luacheck: ignore 113
 vim.cmd("packadd lush.nvim")
 local lush = require("lush")
 
@@ -8,6 +6,7 @@ local scheme = lush(function()
 	if not colors then
 		return {}
 	end
+	-- selene: allow(undefined_variable)
 	return {
 		Normal({ fg = colors.foreground, bg = colors.background }),
 		Bold({ Normal, gui = "bold" }),
@@ -111,6 +110,7 @@ local scheme = lush(function()
 		gitCommitOverflow({ fg = colors.color5 }),
 		gitCommitSummary({ fg = colors.color2 }),
 	}
+	-- selene: deny(undefined_variable)
 end)
 
 return scheme

@@ -3,6 +3,7 @@
 local lush = require("lush")
 local colors = require("lushwal.colors")
 return lush(function()
+	-- selene: allow(undefined_variable)
 	return {
 		DiagnosticError({ fg = colors.color5 }),
 		DiagnosticWarn({ fg = colors.color3 }),
@@ -13,4 +14,5 @@ return lush(function()
 		DiagnosticUnderlineInfo({ DiagnosticInfo, sp = DiagnosticInfo.fg, gui = "underline" }),
 		DiagnosticUnderlineHint({ DiagnosticHint, sp = DiagnosticHint.fg, gui = "underline" }),
 	}
+	-- selene: deny(undefined_variable)
 end)

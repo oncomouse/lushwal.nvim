@@ -4,6 +4,7 @@
 local lush = require("lush")
 local colors = require("lushwal.colors")
 return lush(function()
+	-- selene: allow(undefined_variable)
 	return {
 		CmpItemAbbr({ fg = colors.br_grey }),
 		CmpItemAbbrDeprecated({ fg = colors.br_grey, gui = "strikethrough" }),
@@ -12,4 +13,5 @@ return lush(function()
 		CmpItemKind({ fg = colors.color6 }),
 		CmpItemMenu({ fg = colors.color7 }),
 	}
+	-- selene: deny(undefined_variable)
 end)

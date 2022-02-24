@@ -4,6 +4,7 @@
 local lush = require("lush")
 local colors = require("lushwal.colors")
 return lush(function()
+	-- selene: allow(undefined_variable)
 	return {
 		LspFloatWinNormal({ bg = colors.color0 }),
 		LspFloatWinBorder({ fg = colors.color6 }),
@@ -22,4 +23,5 @@ return lush(function()
 		ReferencesIcon({ fg = colors.color6 }),
 		TargetWord({ fg = colors.color2.li(40) }),
 	}
+	-- selene: deny(undefined_variable)
 end)

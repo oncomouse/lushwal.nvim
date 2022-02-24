@@ -3,6 +3,7 @@
 local lush = require("lush")
 local colors = require("lushwal.colors")
 return lush(function()
+	-- selene: allow(undefined_variable)
 	return {
 		AnsiColor0({ fg = colors.color0 }),
 		AnsiColor1({ fg = colors.color1 }),
@@ -21,4 +22,5 @@ return lush(function()
 		AnsiColor14({ fg = colors.color14 }),
 		AnsiColor15({ fg = colors.color15 }),
 	}
+	-- selene: deny(undefined_variable)
 end)

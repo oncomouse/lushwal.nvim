@@ -4,6 +4,7 @@
 local lush = require("lush")
 local colors = require("lushwal.colors")
 return lush(function()
+	-- selene: allow(undefined_variable)
 	return {
 		BufferCurrent({ bg = colors.color8, fg = colors.color7 }),
 		BufferCurrentIndex({ bg = colors.color8, fg = colors.color6 }),
@@ -24,4 +25,5 @@ return lush(function()
 		BufferTabpage({ bg = colors.color0, fg = colors.color6 }),
 		BufferTabpageFill({ bg = colors.color0, fg = colors.br_grey })
 	}
+	-- selene: deny(undefined_variable)
 end)

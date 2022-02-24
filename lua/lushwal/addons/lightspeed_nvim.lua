@@ -8,6 +8,7 @@ return lush(function()
 	local warmer = colors.color1.darken(25)
 	local cooler = colors.color14
 	local mask = colors.color5.darken(15)
+	-- selene: allow(undefined_variable)
 	return {
 		LightspeedLabel({ fg = warmer, gui = "bold,underline" }),
 		LightspeedOverlapped({ fg = warmer.darken(15), gui = "underline" }),
@@ -22,4 +23,5 @@ return lush(function()
 		LightspeedUniqueChar({ LightspeedUnlabeledMatch }),
 		LightspeedPendingOpArea({ LightspeedShortcut, gui = "underline" }),
 	}
+	-- selene: deny(undefined_variable)
 end)

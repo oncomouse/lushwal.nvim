@@ -3,6 +3,7 @@
 local lush = require("lush")
 local colors = require("lushwal.colors")
 return lush(function()
+	-- selene: allow(undefined_variable)
 	return {
 		ALEVirtualTextError({ fg = colors.color5, bg = colors.background }),
 		ALEVirtualTextWarning({ fg = colors.color3, bg = colors.background }),
@@ -14,4 +15,5 @@ return lush(function()
 		ALEWarningSign({ ALEVirtualTextWarning, gui = "bold" }),
 		ALEInfoSign({ ALEVirtualTextInfo, gui = "bold" }),
 	}
+	-- selene: deny(undefined_variable)
 end)

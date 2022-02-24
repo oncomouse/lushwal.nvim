@@ -4,10 +4,12 @@
 local lush = require("lush")
 local colors = require("lushwal.colors")
 return lush(function()
+	-- selene: allow(undefined_variable)
 	return {
 		DashboardShortCut({ fg = colors.color2.li(40) }),
 		DashboardHeader({ fg = colors.color3 }),
 		DashboardCenter({ fg = colors.color10 }),
 		DashboardFooter({ fg = colors.brown, gui = "italic" }),
 	}
+	-- selene: deny(undefined_variable)
 end)

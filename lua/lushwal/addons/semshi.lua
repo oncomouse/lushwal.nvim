@@ -3,6 +3,7 @@
 local lush = require("lush")
 local colors = require("lushwal.colors")
 return lush(function()
+	-- selene: allow(undefined_variable)
 	return {
 		semshiLocal({ fg = colors.brown }),
 		semshiGlobal({ fg = colors.color1 }),
@@ -18,4 +19,5 @@ return lush(function()
 		semshiErrorSign({ fg = colors.foreground, bg = colors.color1.li(5) }),
 		semshiErrorChar({ fg = colors.foreground, bg = colors.color1.li(5) }),
 	}
+	-- selene: deny(undefined_variable)
 end)

@@ -4,6 +4,7 @@
 local lush = require("lush")
 local colors = require("lushwal.colors")
 return lush(function()
+	-- selene: allow(undefined_variable)
 	return {
 		BufferLineFill({ bg = colors.color0 }),
 		BufferLineBackground({ fg = colors.color7 }),
@@ -22,4 +23,5 @@ return lush(function()
 		BufferLineCloseButtonVisible({ fg = colors.color8 }),
 		BufferLineCloseButtonSelected({ fg = colors.color5, bg = colors.color0 }),
 	}
+	-- selene: deny(undefined_variable)
 end)

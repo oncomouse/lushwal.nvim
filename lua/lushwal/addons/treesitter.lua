@@ -3,6 +3,7 @@
 local lush = require("lush")
 local colors = require("lushwal.colors")
 return lush(function()
+	-- selene: allow(undefined_variable)
 	return {
 		TSAnnotation({ fg = colors.color4 }),
 		TSAttribute({ fg = colors.color4 }),
@@ -53,4 +54,5 @@ return lush(function()
 		TSVariable({ fg = colors.color3 }),
 		TSVariableBuiltin({ fg = colors.color5 }),
 	}
+	-- selene: deny(undefined_variable)
 end)

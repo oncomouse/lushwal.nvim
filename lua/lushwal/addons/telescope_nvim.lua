@@ -3,6 +3,7 @@
 local lush = require("lush")
 local colors = require("lushwal.colors")
 return lush(function()
+	-- selene: allow(undefined_variable)
 	return {
 		TelescopeBorder({ fg = colors.br_grey }),
 		TelescopePromptBorder({ fg = colors.br_grey }),
@@ -12,4 +13,5 @@ return lush(function()
 		TelescopePromptCounter({ fg = colors.color4 }),
 		TelescopeMultiSelection({ fg = colors.color3, gui = "bold" }),
 	}
+	-- selene: deny(undefined_variable)
 end)

@@ -3,6 +3,7 @@
 local lush = require("lush")
 local colors = require("lushwal.colors")
 return lush(function()
+	-- selene: allow(undefined_variable)
 	return {
 		SignifySignAdd({ fg = colors.color2, bg = colors.background, gui = "bold" }),
 		SignifySignChange({ fg = colors.color4, bg = colors.background, gui = "bold" }),
@@ -10,4 +11,5 @@ return lush(function()
 		SignifySignChangeDelete({ fg = colors.purple, bg = colors.background, gui = "bold" }),
 		SignifySignDeleteFirstLine({ fg = colors.color5, bg = colors.background, gui = "bold" }),
 	}
+	-- selene: deny(undefined_variable)
 end)

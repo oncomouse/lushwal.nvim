@@ -3,6 +3,7 @@
 local lush = require("lush")
 local colors = require("lushwal.colors")
 return lush(function()
+	-- selene: allow(undefined_variable)
 	return {
 		CocErrorFloat({ fg = colors.color5 }),
 		CocWarningFloat({ fg = colors.color3 }),
@@ -23,4 +24,5 @@ return lush(function()
 		CocSelectedText({ fg = colors.purple }),
 		CocCodeLens({ fg = colors.color7 }),
 	}
+	-- selene: deny(undefined_variable)
 end)

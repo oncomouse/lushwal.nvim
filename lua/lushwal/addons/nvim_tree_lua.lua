@@ -4,6 +4,7 @@
 local lush = require("lush")
 local colors = require("lushwal.colors")
 return lush(function()
+	-- selene: allow(undefined_variable)
 	return {
 		NvimTreeFolderName({ fg = colors.color6 }),
 		NvimTreeFolderIcon({ fg = colors.color6 }),
@@ -22,4 +23,5 @@ return lush(function()
 		NvimTreeImageFile({ fg = colors.color7 }),
 		NvimTreeOpenedFile({ fg = colors.color1 }),
 	}
+	-- selene: deny(undefined_variable)
 end)
