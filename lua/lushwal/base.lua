@@ -43,7 +43,6 @@ local scheme = lush(function()
 		EndOfBuffer({ fg = colors.foreground, bg = colors.background }),
 		SignColumn({ fg = colors.grey, bg = colors.background }),
 		LineNr({ fg = colors.br_grey, bg = colors.background }),
-		VertSplit({ fg = colors.background, bg = colors.grey }),
 		ColorColumn({ fg = colors.grey }),
 		CursorColumn({ fg = colors.grey }),
 		CursorLine({ fg = colors.color8, gui = "None" }),
