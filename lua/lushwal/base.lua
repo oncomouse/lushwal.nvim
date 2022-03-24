@@ -20,7 +20,7 @@ local scheme = lush(function()
 		Folded({ fg = colors.color7, bg = colors.color8, gui = "italic" }),
 		IncSearch({ fg = colors.color8, bg = colors.color1 }),
 
-		VertSplit({ fg = colors.color8, bg = colors.background }),
+		VertSplit({ fg = colors.color7, bg = colors.background }),
 		WinSeparator({ VertSplit }),
 
 		Macro({ fg = colors.color5 }),
