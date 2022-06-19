@@ -96,6 +96,8 @@ local scheme = lush(function()
 		StatusLineNC({ fg = colors.grey, bg = colors.color8 }),
 		StatusLineTerm({ fg = colors.color10, bg = colors.color2 }),
 		StatusLineTermNC({ fg = colors.color11, bg = colors.color8 }),
+		WinBar({ fg = colors.color7, bg = colors.color8, gui = "None"}),
+		WinBarNC({ fg = colors.grey, bg = colors.color8, gui = "None" }),
 		User({ Normal }),
 
 		DiffAdd({ fg = colors.color2, bg = colors.color8, gui = "bold" }),
