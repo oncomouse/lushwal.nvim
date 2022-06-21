@@ -35,6 +35,8 @@ if ok then
 	local grey = color8.mix(color7, 30) -- Darker mid-grey
 	local br_grey = color8.mix(color7, 65) -- Mid-grey
 	local purple = color4.rotate(65).li(45) -- Purple
+	local pink = purple.mix(color5)
+	local amaranth = color4.mix(color5, 34).saturate(46).darken(5)
 	local brown = color1.mix(color5, 15) -- Brown
 
 	return {
@@ -59,7 +61,9 @@ if ok then
 		color15 = color15,
 		grey = grey,
 		br_grey = br_grey,
+		amaranth = amaranth,
 		purple = purple,
+		pink = pink,
 		brown = brown,
 	}
 else
