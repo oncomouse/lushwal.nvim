@@ -38,6 +38,7 @@ local scheme = lush(function()
 		WildMenu({ fg = colors.foreground, bg = colors.color4 }),
 		Title({ fg = colors.color4, gui = "bold" }),
 		Conceal({ fg = colors.color8, bg = colors.background }),
+		Whitespace({ Conceal }),
 		Cursor({ fg = colors.background, bg = colors.foreground }),
 		NonText({ fg = colors.br_grey }),
 		EndOfBuffer({ fg = colors.foreground, bg = colors.background }),
