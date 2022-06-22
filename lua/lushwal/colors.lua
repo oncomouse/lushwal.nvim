@@ -32,12 +32,6 @@ if ok then
 	local color13 = hsl(colors.colors.color13)
 	local color14 = hsl(colors.colors.color14)
 	local color15 = hsl(colors.colors.color15)
-	local grey = color8.mix(color7, 30) -- Darker mid-grey
-	local br_grey = color8.mix(color7, 65) -- Mid-grey
-	local purple = color4.rotate(65).li(45) -- Purple
-	local pink = purple.mix(color5, 50)
-	local amaranth = color4.mix(color5, 34).saturate(46).darken(5)
-	local brown = color1.mix(color5, 15) -- Brown
 
 	return {
 		foreground = foreground,
@@ -59,12 +53,30 @@ if ok then
 		color13 = color13,
 		color14 = color14,
 		color15 = color15,
-		grey = grey,
-		br_grey = br_grey,
-		amaranth = amaranth,
-		purple = purple,
-		pink = pink,
-		brown = brown,
+		black = color0,
+		red = color1,
+		green = color2,
+		yellow = color3,
+		blue = color4,
+		magenta = color5,
+		cyan = color6,
+		white = color7,
+		br_black = color8,
+		br_red = color9,
+		br_green = color10,
+		br_yellow = color11,
+		br_blue = color12,
+		br_magenta = color13,
+		br_cyan = color14,
+		br_white = color15,
+		-- Special colors:
+		grey = color8.mix(color7, 30), -- Darker mid-grey
+		br_grey = color8.mix(color7, 65), -- Mid-grey
+		orange = color1.mix(color3, 50),
+		purple = color4.rotate(65).li(45), -- Purple
+		pink = color4.rotate(65).li(45).mix(color5, 50), -- Pink
+		amaranth = color4.mix(color1, 34).saturate(46).darken(5),
+		brown = color1.mix(color5, 15), -- Brown
 	}
 else
 	return nil
