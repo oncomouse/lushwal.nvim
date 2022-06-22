@@ -6,7 +6,7 @@ vim.g.colors_name = "lushwal"
 vim.cmd([[packadd lush.nvim]])
 require("lush")(require("lushwal").scheme)
 
--- This makes sure we compile the vimscript scheme with an late added configuration variables (such as those set in a
+-- This makes sure we compile the vimscript scheme with any late added configuration variables (such as those set in a
 -- packer.nvim config function). We reload the colorscheme for the same reasons.
 vim.defer_fn(function()
 	local config = require("lushwal").config
@@ -19,7 +19,7 @@ vim.defer_fn(function()
 	end
 	-- Compile:
 	if config.compile_to_vimscript then
-		require("lush")(require("lushwal").scheme)
+		-- require("lush")(require("lushwal").scheme)
 		require("lushwal").compile()
 	end
 end, 1)
