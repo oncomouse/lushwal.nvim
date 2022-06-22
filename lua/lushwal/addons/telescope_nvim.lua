@@ -1,7 +1,7 @@
 -- luacheck: globals vim
 -- luacheck: ignore 113
 local lush = require("lush")
-local colors = require("lushwal.colors")
+local colors = require("lushwal").colors
 return lush(function()
 	-- selene: allow(undefined_variable)
 	return {

@@ -1,7 +1,7 @@
 vim.cmd("packadd lush.nvim")
 local lush = require("lush")
 
-local colors = require("lushwal.colors")
+local colors = require("lushwal").colors
 local scheme = lush(function()
 	if not colors then
 		return {}

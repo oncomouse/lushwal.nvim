@@ -2,7 +2,7 @@
 -- luacheck: ignore 113
 -- Sourced from: https://github.com/catppuccin/nvim
 local lush = require("lush")
-local colors = require("lushwal.colors")
+local colors = require("lushwal").colors
 return lush(function()
 	local foreground = lush.hsl("#FFFFFF")
 	local warmer = colors.color1.darken(25)

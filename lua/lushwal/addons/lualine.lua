@@ -1,4 +1,4 @@
-local colors = require("lushwal.colors")
+local colors = require("lushwal").colors
 local red = colors.color1.hex
 local green = colors.color2.hex
 local blue = colors.color4.hex

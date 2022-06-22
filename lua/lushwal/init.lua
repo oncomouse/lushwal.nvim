@@ -8,6 +8,8 @@ local function merge_configuration()
 end
 
 local M = {}
+local config = {}
+local colors = {}
 M.compile = require("lushwal.compile")
 local addons_to_skip = {
 	"lightline",
@@ -16,15 +18,18 @@ local addons_to_skip = {
 setmetatable(M, {
 	__index = function(lushwal, key)
 		if key == "config" then
-			return merge_configuration()
+			if #config == 0 then
+				config = merge_configuration()
+			end
+			return config
 		elseif key == "scheme" then
-			local config = merge_configuration()
+			local cfg = lushwal.config
 			local scheme = require("lushwal.base")
 
 			-- Merge desired addons:
 			for _, addon in pairs(vim.tbl_filter(function(x)
-				return config.addons[x] == true
-			end, vim.tbl_keys(config.addons))) do
+				return cfg.addons[x] == true
+			end, vim.tbl_keys(cfg.addons))) do
 				if not vim.tbl_contains(addons_to_skip, addon) then
 					xpcall(function()
 						scheme = lush.merge({ scheme, require("lushwal.addons." .. addon) })
@@ -34,6 +39,17 @@ setmetatable(M, {
 				end
 			end
 			return scheme
+		elseif key == "colors" then
+			if #colors == 0 then
+				local cfg = lushwal.config
+				colors = require("lushwal.colors")
+				if type(cfg.color_overrides) == "function" then
+					colors = cfg.color_overrides(colors)
+				elseif type(cfg.color_overrides) == "table" then
+					colors = vim.tbl_extend("force", colors, cfg.color_overrides)
+				end
+			end
+			return colors
 		else
 			return lushwal[key]
 		end
