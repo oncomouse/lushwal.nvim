@@ -75,7 +75,7 @@ if ok then
 		orange = color1.mix(color3, 50),
 		purple = color4.rotate(65).li(45), -- Purple
 		pink = color4.rotate(65).li(45).mix(color5, 50), -- Pink
-		amaranth = color4.mix(color1, 34).saturate(46).darken(5),
+		amaranth = color1.mix(color4, 34).saturate(46).darken(5),
 		brown = color1.mix(color5, 15), -- Brown
 	}
 else
