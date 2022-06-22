@@ -6,24 +6,24 @@ local colors = require("lushwal").colors
 return lush(function()
 	-- selene: allow(undefined_variable)
 	return {
-		BufferCurrent({ bg = colors.color8, fg = colors.color7 }),
-		BufferCurrentIndex({ bg = colors.color8, fg = colors.color6 }),
-		BufferCurrentMod({ bg = colors.color8, fg = colors.color5 }),
-		BufferCurrentSign({ bg = colors.color8, fg = colors.color6 }),
-		BufferCurrentTarget({ bg = colors.color8, fg = colors.color3 }),
-		BufferVisible({ bg = colors.color0, fg = colors.color7 }),
-		BufferVisibleIndex({ bg = colors.color0, fg = colors.color6 }),
-		BufferVisibleMod({ bg = colors.color0, fg = colors.color3 }),
-		BufferVisibleSign({ bg = colors.color0, fg = colors.color6 }),
-		BufferVisibleTarget({ bg = colors.color0, fg = colors.color5 }),
-		BufferInactive({ bg = colors.color0, fg = colors.br_grey }),
-		BufferInactiveIndex({ bg = colors.color0, fg = colors.br_grey }),
-		BufferInactiveMod({ bg = colors.color0, fg = colors.color3 }),
-		BufferInactiveSign({ bg = colors.color0, fg = colors.color6 }),
-		BufferInactiveTarget({ bg = colors.color0, fg = colors.color5 }),
-		BufferTabpages({ bg = colors.color0 }),
-		BufferTabpage({ bg = colors.color0, fg = colors.color6 }),
-		BufferTabpageFill({ bg = colors.color0, fg = colors.br_grey })
+		BufferCurrent({ bg = colors.br_black, fg = colors.white }),
+		BufferCurrentIndex({ bg = colors.br_black, fg = colors.cyan }),
+		BufferCurrentMod({ bg = colors.br_black, fg = colors.orange }),
+		BufferCurrentSign({ bg = colors.br_black, fg = colors.cyan }),
+		BufferCurrentTarget({ bg = colors.br_black, fg = colors.yellow }),
+		BufferVisible({ bg = colors.black, fg = colors.white }),
+		BufferVisibleIndex({ bg = colors.black, fg = colors.cyan }),
+		BufferVisibleMod({ bg = colors.black, fg = colors.yellow }),
+		BufferVisibleSign({ bg = colors.black, fg = colors.cyan }),
+		BufferVisibleTarget({ bg = colors.black, fg = colors.orange }),
+		BufferInactive({ bg = colors.black, fg = colors.br_grey }),
+		BufferInactiveIndex({ bg = colors.black, fg = colors.br_grey }),
+		BufferInactiveMod({ bg = colors.black, fg = colors.yellow }),
+		BufferInactiveSign({ bg = colors.black, fg = colors.cyan }),
+		BufferInactiveTarget({ bg = colors.black, fg = colors.orange }),
+		BufferTabpages({ bg = colors.black }),
+		BufferTabpage({ bg = colors.black, fg = colors.cyan }),
+		BufferTabpageFill({ bg = colors.black, fg = colors.br_grey })
 	}
 	-- selene: deny(undefined_variable)
 end)

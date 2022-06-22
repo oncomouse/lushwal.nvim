@@ -6,18 +6,18 @@ return lush(function()
 	-- selene: allow(undefined_variable)
 	return {
 		semshiLocal({ fg = colors.brown }),
-		semshiGlobal({ fg = colors.color1 }),
+		semshiGlobal({ fg = colors.red }),
 		semshiImported({ fg = colors.brown, gui = "bold" }),
-		semshiParameter({ fg = colors.color4 }),
-		semshiParameterUnused({ fg = colors.color12, gui = "underline" }),
-		semshiFree({ fg = colors.color5 }),
-		semshiBuiltin({ fg = colors.color13 }),
-		semshiAttribute({ fg = colors.color6 }),
-		semshiSelf({ fg = colors.color7 }),
-		semshiUnresolved({ fg = colors.color3, gui = "underline" }),
-		semshiSelected({ fg = colors.background, bg = colors.color9.li(35) }),
-		semshiErrorSign({ fg = colors.foreground, bg = colors.color1.li(5) }),
-		semshiErrorChar({ fg = colors.foreground, bg = colors.color1.li(5) }),
+		semshiParameter({ fg = colors.blue }),
+		semshiParameterUnused({ fg = colors.br_blue, gui = "underline" }),
+		semshiFree({ fg = colors.orange }),
+		semshiBuiltin({ fg = colors.br_magenta }),
+		semshiAttribute({ fg = colors.cyan }),
+		semshiSelf({ fg = colors.white }),
+		semshiUnresolved({ fg = colors.yellow, gui = "underline" }),
+		semshiSelected({ fg = colors.background, bg = colors.br_red.li(35) }),
+		semshiErrorSign({ fg = colors.foreground, bg = colors.red.li(5) }),
+		semshiErrorChar({ fg = colors.foreground, bg = colors.red.li(5) }),
 	}
 	-- selene: deny(undefined_variable)
 end)

@@ -5,9 +5,9 @@ local colors = require("lushwal").colors
 return lush(function()
 	-- selene: allow(undefined_variable)
 	return {
-		GitGutterAdd({ fg = colors.color2, bg = colors.background, gui = "bold" }),
-		GitGutterChange({ fg = colors.color4, bg = colors.background, gui = "bold" }),
-		GitGutterDelete({ fg = colors.color5, bg = colors.background, gui = "bold" }),
+		GitGutterAdd({ fg = colors.green, bg = colors.background, gui = "bold" }),
+		GitGutterChange({ fg = colors.blue, bg = colors.background, gui = "bold" }),
+		GitGutterDelete({ fg = colors.orange, bg = colors.background, gui = "bold" }),
 		GitGutterChangeDelete({ fg = colors.purple, bg = colors.background, gui = "bold" }),
 	}
 	-- selene: deny(undefined_variable)

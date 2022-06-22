@@ -5,9 +5,9 @@ local lush = require("lush")
 local colors = require("lushwal").colors
 return lush(function()
 	local foreground = lush.hsl("#FFFFFF")
-	local warmer = colors.color1.darken(25)
-	local cooler = colors.color14
-	local mask = colors.color5.darken(15)
+	local warmer = colors.red.darken(25)
+	local cooler = colors.br_cyan
+	local mask = colors.orange.darken(15)
 	-- selene: allow(undefined_variable)
 	return {
 		LightspeedLabel({ fg = warmer, gui = "bold,underline" }),

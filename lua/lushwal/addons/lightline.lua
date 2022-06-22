@@ -1,16 +1,16 @@
 -- luacheck: globals vim
 local colors = require("lushwal").colors
-local red = colors.color1.hex
-local green = colors.color2.hex
-local blue = colors.color4.hex
+local red = colors.orange.hex
+local green = colors.green.hex
+local blue = colors.blue.hex
 local purple = colors.purple.hex
-local aqua = colors.color6.hex
+local aqua = colors.cyan.hex
 
 -- Basics:
 local foreground = colors.foreground.hex
 local background = colors.background.hex
-local window = colors.color7.hex
-local status = colors.color8.hex
+local window = colors.white.hex
+local status = colors.br_black.hex
 local error = "#5f0000"
 
 -- Normal Mode:

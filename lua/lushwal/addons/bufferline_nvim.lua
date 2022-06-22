@@ -6,22 +6,22 @@ local colors = require("lushwal").colors
 return lush(function()
 	-- selene: allow(undefined_variable)
 	return {
-		BufferLineFill({ bg = colors.color0 }),
-		BufferLineBackground({ fg = colors.color7 }),
-		BufferLineBufferVisible({ fg = colors.color8 }),
-		BufferLineBufferSelected({ fg = colors.color15, bg = colors.color0 }),
-		BufferLineTab({ fg = colors.grey, bg = colors.color0 }),
-		BufferLineTabSelected({ fg = colors.color5, bg = colors.color6 }),
-		BufferLineTabClose({ fg = colors.color5 }),
-		BufferLineIndicatorSelected({ fg = colors.brown, bg = colors.color0 }),
+		BufferLineFill({ bg = colors.black }),
+		BufferLineBackground({ fg = colors.white }),
+		BufferLineBufferVisible({ fg = colors.br_black }),
+		BufferLineBufferSelected({ fg = colors.br_white, bg = colors.black }),
+		BufferLineTab({ fg = colors.grey, bg = colors.black }),
+		BufferLineTabSelected({ fg = colors.orange, bg = colors.cyan }),
+		BufferLineTabClose({ fg = colors.orange }),
+		BufferLineIndicatorSelected({ fg = colors.brown, bg = colors.black }),
 		-- separators
 		BufferLineSeparator({ fg = colors.background, bg = colors.background }),
 		BufferLineSeparatorVisible({ fg = colors.background, bg = colors.background }),
 		BufferLineSeparatorSelected({ fg = colors.background, bg = colors.background }),
 		-- close buttons
-		BufferLineCloseButton({ fg = colors.color8 }),
-		BufferLineCloseButtonVisible({ fg = colors.color8 }),
-		BufferLineCloseButtonSelected({ fg = colors.color5, bg = colors.color0 }),
+		BufferLineCloseButton({ fg = colors.br_black }),
+		BufferLineCloseButtonVisible({ fg = colors.br_black }),
+		BufferLineCloseButtonSelected({ fg = colors.orange, bg = colors.black }),
 	}
 	-- selene: deny(undefined_variable)
 end)

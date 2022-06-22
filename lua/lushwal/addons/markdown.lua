@@ -5,13 +5,13 @@ local colors = require("lushwal").colors
 return lush(function()
 	-- selene: allow(undefined_variable)
 	return {
-		mkdCode({ fg = colors.color2 }),
-		mkdCodeBlock({ fg = colors.color2 }),
-		mkdHeadingDelimiter({ fg = colors.color4 }),
-		mkdH1({ fg = colors.color4, gui = "bold" }),
-		mkdH2({ fg = colors.color4, gui = "bold" }),
+		mkdCode({ fg = colors.green }),
+		mkdCodeBlock({ fg = colors.green }),
+		mkdHeadingDelimiter({ fg = colors.blue }),
+		mkdH1({ fg = colors.blue, gui = "bold" }),
+		mkdH2({ fg = colors.blue, gui = "bold" }),
 		mkdItalic({ fg = colors.purple, gui = "italic" }),
-		mkdBold({ fg = colors.color3, gui = "bold" }),
+		mkdBold({ fg = colors.yellow, gui = "bold" }),
 		mkdCodeDelimiter({ fg = colors.brown, gui = "italic" }),
 		mkdError({ fg = colors.foreground, bg = colors.background }),
 

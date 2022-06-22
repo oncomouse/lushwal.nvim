@@ -6,9 +6,9 @@ local colors = require("lushwal").colors
 return lush(function()
 	-- selene: allow(undefined_variable)
 	return {
-		GitSignsAdd({ fg = colors.color6 }),
-		GitSignsChange({ fg = colors.color3 }),
-		GitSignsDelete({ fg = colors.color5 }),
+		GitSignsAdd({ fg = colors.cyan }),
+		GitSignsChange({ fg = colors.yellow }),
+		GitSignsDelete({ fg = colors.orange }),
 	}
 	-- selene: deny(undefined_variable)
 end)

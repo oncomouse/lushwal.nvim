@@ -5,10 +5,10 @@ local colors = require("lushwal").colors
 return lush(function()
 	-- selene: allow(undefined_variable)
 	return {
-		CocErrorFloat({ fg = colors.color5 }),
-		CocWarningFloat({ fg = colors.color3 }),
-		CocInfoFloat({ fg = colors.color4 }),
-		CocHintFloat({ fg = colors.color6 }),
+		CocErrorFloat({ fg = colors.orange }),
+		CocWarningFloat({ fg = colors.yellow }),
+		CocInfoFloat({ fg = colors.blue }),
+		CocHintFloat({ fg = colors.cyan }),
 		CocDiagnosticsError({ CocErrorFloat }),
 		CocDiagnosticsWarning({ CocWarningFloat }),
 		CocDiagnosticsInfo({ CocInfoFloat }),
@@ -22,7 +22,7 @@ return lush(function()
 		CocInfoHighlight({ CocInfoFloat, sp = CocInfoFloat.fg, gui = "underline" }),
 		CocHintHighlight({ CocHintFloat, sp = CocHintFloat.fg, gui = "underline" }),
 		CocSelectedText({ fg = colors.purple }),
-		CocCodeLens({ fg = colors.color7 }),
+		CocCodeLens({ fg = colors.white }),
 	}
 	-- selene: deny(undefined_variable)
 end)

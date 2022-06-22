@@ -6,13 +6,13 @@ local colors = require("lushwal").colors
 return lush(function()
 	-- selene: allow(undefined_variable)
 	return {
-		rainbowcol1({ bg = colors.color0, fg = colors.color5 }),
-		rainbowcol2({ bg = colors.color0, fg = colors.color10 }),
-		rainbowcol3({ bg = colors.color0, fg = colors.color3 }),
-		rainbowcol4({ bg = colors.color0, fg = colors.color6 }),
-		rainbowcol5({ bg = colors.color0, fg = colors.color1 }),
-		rainbowcol6({ bg = colors.color0, fg = colors.color2.li(40) }),
-		rainbowcol7({ bg = colors.color0, fg = colors.purple }),
+		rainbowcol1({ bg = colors.black, fg = colors.orange }),
+		rainbowcol2({ bg = colors.black, fg = colors.br_green }),
+		rainbowcol3({ bg = colors.black, fg = colors.yellow }),
+		rainbowcol4({ bg = colors.black, fg = colors.cyan }),
+		rainbowcol5({ bg = colors.black, fg = colors.red }),
+		rainbowcol6({ bg = colors.black, fg = colors.green.li(40) }),
+		rainbowcol7({ bg = colors.black, fg = colors.purple }),
 	}
 	-- selene: deny(undefined_variable)
 end)

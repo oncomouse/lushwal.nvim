@@ -6,8 +6,8 @@ local colors = require("lushwal").colors
 return lush(function()
 	-- selene: allow(undefined_variable)
 	return {
-		Sneak({ fg = colors.color0, bg = colors.color1 }),
-		SneakScope({ bg = colors.color7 }),
+		Sneak({ fg = colors.black, bg = colors.red }),
+		SneakScope({ bg = colors.white }),
 	}
 	-- selene: deny(undefined_variable)
 end)

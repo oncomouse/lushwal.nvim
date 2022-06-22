@@ -6,9 +6,9 @@ return lush(function()
 	-- selene: allow(undefined_variable)
 	return {
 		NERDTreeExecFile({ fg = colors.foreground }),
-		NERDTreeDirSlash({ fg = colors.color4 }),
-		NERDTreeOpenable({ fg = colors.color4 }),
-		NERDTreeFlags({ fg = colors.color4 }),
+		NERDTreeDirSlash({ fg = colors.blue }),
+		NERDTreeOpenable({ fg = colors.blue }),
+		NERDTreeFlags({ fg = colors.blue }),
 	}
 	-- selene: deny(undefined_variable)
 end)

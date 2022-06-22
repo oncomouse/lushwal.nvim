@@ -8,10 +8,10 @@ return lush(function()
 	return {
 		CmpItemAbbr({ fg = colors.br_grey }),
 		CmpItemAbbrDeprecated({ fg = colors.br_grey, gui = "strikethrough" }),
-		CmpItemAbbrMatch({ fg = colors.color7, gui = "bold" }),
-		CmpItemAbbrMatchFuzzy({ fg = colors.color7, gui = "bold" }),
-		CmpItemKind({ fg = colors.color6 }),
-		CmpItemMenu({ fg = colors.color7 }),
+		CmpItemAbbrMatch({ fg = colors.white, gui = "bold" }),
+		CmpItemAbbrMatchFuzzy({ fg = colors.white, gui = "bold" }),
+		CmpItemKind({ fg = colors.cyan }),
+		CmpItemMenu({ fg = colors.white }),
 	}
 	-- selene: deny(undefined_variable)
 end)

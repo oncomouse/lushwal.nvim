@@ -6,22 +6,22 @@ local colors = require("lushwal").colors
 return lush(function()
 	-- selene: allow(undefined_variable)
 	return {
-		LspFloatWinNormal({ bg = colors.color0 }),
-		LspFloatWinBorder({ fg = colors.color6 }),
-		LspSagaBorderTitle({ fg = colors.color2.li(40) }),
-		LspSagaHoverBorder({ fg = colors.color6 }),
-		LspSagaRenameBorder({ fg = colors.color10 }),
-		LspSagaDefPreviewBorder({ fg = colors.color10 }),
-		LspSagaCodeActionBorder({ fg = colors.color6 }),
-		LspSagaFinderSelection({ fg = colors.color8 }),
-		LspSagaCodeActionTitle({ fg = colors.color6 }),
+		LspFloatWinNormal({ bg = colors.black }),
+		LspFloatWinBorder({ fg = colors.cyan }),
+		LspSagaBorderTitle({ fg = colors.green.li(40) }),
+		LspSagaHoverBorder({ fg = colors.cyan }),
+		LspSagaRenameBorder({ fg = colors.br_green }),
+		LspSagaDefPreviewBorder({ fg = colors.br_green }),
+		LspSagaCodeActionBorder({ fg = colors.cyan }),
+		LspSagaFinderSelection({ fg = colors.br_black }),
+		LspSagaCodeActionTitle({ fg = colors.cyan }),
 		LspSagaCodeActionContent({ fg = colors.purple }),
-		LspSagaSignatureHelpBorder({ fg = colors.color5 }),
+		LspSagaSignatureHelpBorder({ fg = colors.orange }),
 		ReferencesCount({ fg = colors.purple }),
 		DefinitionCount({ fg = colors.purple }),
-		DefinitionIcon({ fg = colors.color6 }),
-		ReferencesIcon({ fg = colors.color6 }),
-		TargetWord({ fg = colors.color2.li(40) }),
+		DefinitionIcon({ fg = colors.cyan }),
+		ReferencesIcon({ fg = colors.cyan }),
+		TargetWord({ fg = colors.green.li(40) }),
 	}
 	-- selene: deny(undefined_variable)
 end)

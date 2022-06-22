@@ -5,33 +5,33 @@ local colors = require("lushwal.lua")
 return lush(function()
 	-- selene: allow(undefined_variable)
 	return {
-		csClass({ fg = colors.color3 }),
-		csAttribute({ fg = colors.color3 }),
+		csClass({ fg = colors.yellow }),
+		csAttribute({ fg = colors.yellow }),
 		csModifier({ fg = colors.purple }),
-		csType({ fg = colors.color5 }),
-		csUnspecifiedStatement({ fg = colors.color4 }),
+		csType({ fg = colors.orange }),
+		csUnspecifiedStatement({ fg = colors.blue }),
 		csContextualStatement({ fg = colors.purple }),
-		csNewDecleration({ fg = colors.color5 }),
-		cOperator({ fg = colors.color6 }),
+		csNewDecleration({ fg = colors.orange }),
+		cOperator({ fg = colors.cyan }),
 		cPreCondit({ fg = colors.purple }),
 
-		cssColor({ fg = colors.color6 }),
+		cssColor({ fg = colors.cyan }),
 		cssBraces({ fg = colors.foreground }),
 		cssClassName({ fg = colors.purple }),
 
-		htmlBold({ fg = colors.color3, gui = "bold" }),
+		htmlBold({ fg = colors.yellow, gui = "bold" }),
 		htmlItalic({ fg = colors.purple, gui = "italic" }),
-		htmlTag({ fg = colors.color6 }),
-		htmlEndTag({ fg = colors.color6 }),
-		htmlArg({ fg = colors.color3 }),
+		htmlTag({ fg = colors.cyan }),
+		htmlEndTag({ fg = colors.cyan }),
+		htmlArg({ fg = colors.yellow }),
 		htmlTagName({ fg = colors.foreground }),
 
 		javaScript({ fg = colors.foreground }),
-		javaScriptNumber({ fg = colors.color1 }),
+		javaScriptNumber({ fg = colors.red }),
 		javaScriptBraces({ fg = colors.foreground }),
 
-		jsonKeyword({ fg = colors.color2 }),
-		jsonQuote({ fg = colors.color2 }),
+		jsonKeyword({ fg = colors.green }),
+		jsonQuote({ fg = colors.green }),
 
 		typescriptParens({ fg = colors.foreground }),
 
@@ -42,23 +42,23 @@ return lush(function()
 		pythonRepeat({ fg = colors.purple }),
 		pythonOperator({ fg = colors.purple }),
 
-		rubyConstant({ fg = colors.color3 }),
-		rubySymbol({ fg = colors.color2 }),
-		rubyAttribute({ fg = colors.color4 }),
-		rubyInterpolation({ fg = colors.color2 }),
+		rubyConstant({ fg = colors.yellow }),
+		rubySymbol({ fg = colors.green }),
+		rubyAttribute({ fg = colors.blue }),
+		rubyInterpolation({ fg = colors.green }),
 		rubyInterpolationDelimiter({ fg = colors.brown }),
-		rubyStringDelimiter({ fg = colors.color2 }),
-		rubyRegexp({ fg = colors.color6 }),
+		rubyStringDelimiter({ fg = colors.green }),
+		rubyRegexp({ fg = colors.cyan }),
 
-		sassidChar({ fg = colors.color5 }),
-		sassClassChar({ fg = colors.color1 }),
+		sassidChar({ fg = colors.orange }),
+		sassClassChar({ fg = colors.red }),
 		sassInclude({ fg = colors.purple }),
 		sassMixing({ fg = colors.purple }),
-		sassMixinName({ fg = colors.color4 }),
+		sassMixinName({ fg = colors.blue }),
 
-		xmlTag({ fg = colors.color6 }),
+		xmlTag({ fg = colors.cyan }),
 		xmlTagName({ fg = colors.foreground }),
-		xmlEndTag({ fg = colors.color6 }),
+		xmlEndTag({ fg = colors.cyan }),
 	}
 	-- selene: deny(undefined_variable)
 end)

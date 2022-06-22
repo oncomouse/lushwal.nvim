@@ -5,10 +5,10 @@ local colors = require("lushwal").colors
 return lush(function()
 	-- selene: allow(undefined_variable)
 	return {
-		DiagnosticError({ fg = colors.color5 }),
-		DiagnosticWarn({ fg = colors.color3 }),
-		DiagnosticInfo({ fg = colors.color4 }),
-		DiagnosticHint({ fg = colors.color6 }),
+		DiagnosticError({ fg = colors.red }),
+		DiagnosticWarn({ fg = colors.yellow }),
+		DiagnosticInfo({ fg = colors.blue }),
+		DiagnosticHint({ fg = colors.cyan }),
 		DiagnosticUnderlineError({ DiagnosticError, sp = DiagnosticError.fg, gui = "underline" }),
 		DiagnosticUnderlineWarn({ DiagnosticWarn, sp = DiagnosticWarn.fg, gui = "underline" }),
 		DiagnosticUnderlineInfo({ DiagnosticInfo, sp = DiagnosticInfo.fg, gui = "underline" }),
