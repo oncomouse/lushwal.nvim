@@ -59,7 +59,7 @@ lushwright.to_vimscript,
 		"syntax reset",
 		"endif",
 		"endif",
-		"let g:colors_name = 'wal'",
+		"let g:colors_name = 'lushwal'",
 	},
 },
 { overwrite, cache_dir .. "/lushwal.vim" }
