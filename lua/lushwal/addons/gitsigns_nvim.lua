@@ -8,7 +8,7 @@ return lush(function()
 	return {
 		GitSignsAdd({ fg = colors.cyan }),
 		GitSignsChange({ fg = colors.yellow }),
-		GitSignsDelete({ fg = colors.orange }),
+		GitSignsDelete({ fg = colors.red }),
 	}
 	-- selene: deny(undefined_variable)
 end)

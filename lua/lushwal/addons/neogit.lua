@@ -11,7 +11,7 @@ return lush(function()
 		NeogitHunkHeader({ bg = colors.cyan, fg = colors.white }),
 		NeogitHunkHeaderHighlight({ bg = colors.grey, fg = colors.cyan }),
 		NeogitDiffContextHighlight({ bg = colors.black, fg = colors.br_white }),
-		NeogitDiffDeleteHighlight({ fg = colors.orange, bg = colors.black }),
+		NeogitDiffDeleteHighlight({ fg = colors.red, bg = colors.black }),
 		NeogitDiffAddHighlight({ fg = colors.cyan, bg = colors.black }),
 	}
 	-- selene: deny(undefined_variable)

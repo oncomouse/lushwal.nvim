@@ -5,7 +5,7 @@ local colors = require("lushwal").colors
 return lush(function()
 	-- selene: allow(undefined_variable)
 	return {
-		ALEVirtualTextError({ fg = colors.orange, bg = colors.background }),
+		ALEVirtualTextError({ fg = colors.red, bg = colors.background }),
 		ALEVirtualTextWarning({ fg = colors.yellow, bg = colors.background }),
 		ALEVirtualTextInfo({ fg = colors.blue, bg = colors.background }),
 		ALEError({ ALEVirtualTextError, sp=ALEVirtualTextError.fg, gui = "underline" }),

@@ -11,8 +11,8 @@ return lush(function()
 		BufferLineBufferVisible({ fg = colors.br_black }),
 		BufferLineBufferSelected({ fg = colors.br_white, bg = colors.black }),
 		BufferLineTab({ fg = colors.grey, bg = colors.black }),
-		BufferLineTabSelected({ fg = colors.orange, bg = colors.cyan }),
-		BufferLineTabClose({ fg = colors.orange }),
+		BufferLineTabSelected({ fg = colors.red, bg = colors.cyan }),
+		BufferLineTabClose({ fg = colors.red }),
 		BufferLineIndicatorSelected({ fg = colors.brown, bg = colors.black }),
 		-- separators
 		BufferLineSeparator({ fg = colors.background, bg = colors.background }),
@@ -21,7 +21,7 @@ return lush(function()
 		-- close buttons
 		BufferLineCloseButton({ fg = colors.br_black }),
 		BufferLineCloseButtonVisible({ fg = colors.br_black }),
-		BufferLineCloseButtonSelected({ fg = colors.orange, bg = colors.black }),
+		BufferLineCloseButtonSelected({ fg = colors.red, bg = colors.black }),
 	}
 	-- selene: deny(undefined_variable)
 end)

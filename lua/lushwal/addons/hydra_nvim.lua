@@ -5,7 +5,7 @@ local colors = require("lushwal").colors
 return lush(function()
 	-- selene: allow(undefined_variable)
 	return {
-		HydraRed({ fg = colors.orange, gui = "bold", cterm = "bold" }),
+		HydraRed({ fg = colors.red, gui = "bold", cterm = "bold" }),
 		HydraBlue({ fg = colors.blue, gui = "bold", cterm = "bold" }),
 		HydraPink({ fg = colors.pink, gui = "bold", cterm = "bold" }),
 		HydraAmaranth({ fg = colors.amaranth, gui = "bold", cterm = "bold" }),

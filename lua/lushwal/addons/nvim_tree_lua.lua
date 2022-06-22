@@ -18,7 +18,7 @@ return lush(function()
 		NvimTreeStatuslineNc({ fg = colors.black, bg = colors.black }),
 		NvimTreeGitDirty({ fg = colors.yellow }),
 		NvimTreeGitNew({ fg = colors.cyan }),
-		NvimTreeGitDeleted({ fg = colors.orange }),
+		NvimTreeGitDeleted({ fg = colors.red }),
 		NvimTreeSpecialFile({ fg = colors.green.li(40) }),
 		NvimTreeImageFile({ fg = colors.white }),
 		NvimTreeOpenedFile({ fg = colors.red }),

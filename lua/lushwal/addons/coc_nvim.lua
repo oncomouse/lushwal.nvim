@@ -5,7 +5,7 @@ local colors = require("lushwal").colors
 return lush(function()
 	-- selene: allow(undefined_variable)
 	return {
-		CocErrorFloat({ fg = colors.orange }),
+		CocErrorFloat({ fg = colors.red }),
 		CocWarningFloat({ fg = colors.yellow }),
 		CocInfoFloat({ fg = colors.blue }),
 		CocHintFloat({ fg = colors.cyan }),

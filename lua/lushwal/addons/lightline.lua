@@ -1,6 +1,6 @@
 -- luacheck: globals vim
 local colors = require("lushwal").colors
-local red = colors.orange.hex
+local red = colors.red.hex
 local green = colors.green.hex
 local blue = colors.blue.hex
 local purple = colors.purple.hex

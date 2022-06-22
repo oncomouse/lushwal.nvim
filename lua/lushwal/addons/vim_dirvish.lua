@@ -6,7 +6,7 @@ return lush(function()
 	-- selene: allow(undefined_variable)
 	return {
 		DirvishPathTail({ fg = colors.blue }),
-		DirvishArg({ fg = colors.orange }),
+		DirvishArg({ fg = colors.red }),
 	}
 	-- selene: deny(undefined_variable)
 end)

@@ -10,7 +10,7 @@ return lush(function()
 		semshiImported({ fg = colors.brown, gui = "bold" }),
 		semshiParameter({ fg = colors.blue }),
 		semshiParameterUnused({ fg = colors.br_blue, gui = "underline" }),
-		semshiFree({ fg = colors.orange }),
+		semshiFree({ fg = colors.red }),
 		semshiBuiltin({ fg = colors.br_magenta }),
 		semshiAttribute({ fg = colors.cyan }),
 		semshiSelf({ fg = colors.white }),

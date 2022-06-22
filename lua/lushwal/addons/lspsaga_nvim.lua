@@ -16,7 +16,7 @@ return lush(function()
 		LspSagaFinderSelection({ fg = colors.br_black }),
 		LspSagaCodeActionTitle({ fg = colors.cyan }),
 		LspSagaCodeActionContent({ fg = colors.purple }),
-		LspSagaSignatureHelpBorder({ fg = colors.orange }),
+		LspSagaSignatureHelpBorder({ fg = colors.red }),
 		ReferencesCount({ fg = colors.purple }),
 		DefinitionCount({ fg = colors.purple }),
 		DefinitionIcon({ fg = colors.cyan }),

@@ -8,10 +8,10 @@ return lush(function()
 		csClass({ fg = colors.yellow }),
 		csAttribute({ fg = colors.yellow }),
 		csModifier({ fg = colors.purple }),
-		csType({ fg = colors.orange }),
+		csType({ fg = colors.red }),
 		csUnspecifiedStatement({ fg = colors.blue }),
 		csContextualStatement({ fg = colors.purple }),
-		csNewDecleration({ fg = colors.orange }),
+		csNewDecleration({ fg = colors.red }),
 		cOperator({ fg = colors.cyan }),
 		cPreCondit({ fg = colors.purple }),
 
@@ -50,7 +50,7 @@ return lush(function()
 		rubyStringDelimiter({ fg = colors.green }),
 		rubyRegexp({ fg = colors.cyan }),
 
-		sassidChar({ fg = colors.orange }),
+		sassidChar({ fg = colors.red }),
 		sassClassChar({ fg = colors.red }),
 		sassInclude({ fg = colors.purple }),
 		sassMixing({ fg = colors.purple }),

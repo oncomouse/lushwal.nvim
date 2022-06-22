@@ -7,7 +7,7 @@ return lush(function()
 	return {
 		GitGutterAdd({ fg = colors.green, bg = colors.background, gui = "bold" }),
 		GitGutterChange({ fg = colors.blue, bg = colors.background, gui = "bold" }),
-		GitGutterDelete({ fg = colors.orange, bg = colors.background, gui = "bold" }),
+		GitGutterDelete({ fg = colors.red, bg = colors.background, gui = "bold" }),
 		GitGutterChangeDelete({ fg = colors.purple, bg = colors.background, gui = "bold" }),
 	}
 	-- selene: deny(undefined_variable)
