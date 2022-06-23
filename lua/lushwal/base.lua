@@ -18,7 +18,7 @@ local scheme = lush(function()
 		Exception({ fg = colors.red }),
 		FoldColumn({ fg = colors.blue, bg = colors.background }),
 		Folded({ fg = colors.white, bg = colors.br_black, gui = "italic" }),
-		IncSearch({ fg = colors.br_black, bg = colors.red }),
+		IncSearch({ fg = colors.br_black, bg = colors.orange }),
 
 		VertSplit({ fg = colors.white, bg = colors.background }),
 		WinSeparator({ VertSplit }),
@@ -58,14 +58,14 @@ local scheme = lush(function()
 		helpExample({ fg = colors.yellow }),
 		helpCommand({ fg = colors.yellow }),
 
-		Boolean({ fg = colors.red }),
+		Boolean({ fg = colors.orange }),
 		Character({ fg = colors.red }),
 		Comment({ fg = colors.white, gui = "italic" }),
 		Conditional({ fg = colors.purple }),
-		Constant({ fg = colors.red }),
+		Constant({ fg = colors.orange }),
 		Define({ fg = colors.purple }),
 		Delimiter({ fg = colors.brown }),
-		Float({ fg = colors.red }),
+		Float({ fg = colors.orange }),
 		Function({ fg = colors.blue }),
 
 		Identifier({ fg = colors.cyan }),
@@ -73,7 +73,7 @@ local scheme = lush(function()
 		Keyword({ fg = colors.purple }),
 
 		Label({ fg = colors.yellow }),
-		Number({ fg = colors.red }),
+		Number({ fg = colors.orange }),
 		Operator({ fg = colors.foreground }),
 		PreProc({ fg = colors.yellow }),
 		Repeat({ fg = colors.yellow }),
