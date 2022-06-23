@@ -38,6 +38,55 @@ setmetatable(M, {
 					end)
 				end
 			end
+			if cfg.support_cterm then
+				local clrs = lushwal.colors
+				local translations = {
+					black = 0,
+					red = 1,
+					green = 2,
+					yellow = 3,
+					blue = 4,
+					magenta = 5,
+					cyan = 6,
+					white = 7,
+					br_black = 8,
+					br_red = 9,
+					br_green = 10,
+					br_yellow = 11,
+					br_blue = 12,
+					br_magenta = 13,
+					br_cyan = 14,
+					br_white = 15,
+					orange = 209,
+					purple = 135,
+					grey = 240,
+					br_grey = 246,
+					brown = 130,
+					pink = 212,
+					amaranth = 164,
+				}
+				local guess_cterm = function(clr)
+					for color_name, ansi_code in pairs(translations) do
+						if clr.hex == clrs[color_name].hex then
+							return ansi_code
+						end
+					end
+					return nil
+				end
+				for name, hi in pairs(scheme) do
+					if type(hi) == "table" then
+						for _,k in pairs({"fg", "bg"}) do
+							if hi[k] and not hi["cterm" .. k] then
+								local cterm = guess_cterm(hi[k])
+								if cterm ~= nil then
+									scheme[name]["cterm" .. k] = cterm
+								end
+							end
+						end
+					end
+				end
+			end
+			-- print(vim.inspect(scheme))
 			return scheme
 		elseif key == "colors" then
 			if #colors == 0 then
