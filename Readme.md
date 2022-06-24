@@ -24,6 +24,8 @@ If you are using the caching feature (on by default), [shipwright.nvim](https://
 
 ### With pywal
 
+When Neovim starts, lushwal.nvim automatically detects changes to your pywal theme and recompiles.
+
 You can run `:LushwalCompile` whenever you update your pywal colors.
 
 If you want, you can run `nvim --headless +LushwalCompile +qall` after you run pywal to regenerate your cached colorscheme.
