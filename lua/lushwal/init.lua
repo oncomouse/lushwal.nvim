@@ -1,6 +1,7 @@
 -- luacheck: globals vim
 vim.cmd("packadd lush.nvim")
 local lush = require("lush")
+local xdg = require("lushwal.utils.xdg")
 local default_configuration = require("lushwal.config")
 
 local function merge_configuration()
@@ -11,6 +12,26 @@ local M = {}
 local config = {}
 local colors = {}
 M.compile = require("lushwal.compile")
+M.compile_if_stale = function ()
+	local uv = vim.loop
+	local mtime = function(s)
+		return s.mtime.sec
+	end
+	local our_path = xdg("XDG_CONFIG_HOME") .. "/nvim/colors/lushwal.vim"
+	local wal_path = xdg("XDG_CACHE_HOME") .. "/wal/colors.json"
+	-- fs_stat will return nil for missing files, you could also check
+	-- specifically for stat, errmsg, code  where code == "ENOENT" for missing
+	-- files, vs unreadable but it probably doesn't matter most of the time.
+	local wal_stats = uv.fs_stat(wal_path)
+	local our_stats = uv.fs_stat(our_path)
+	if (wal_stats and not our_stats) or (wal_stats and our_stats and mtime(our_stats) < mtime(wal_stats)) then
+		-- have wal-file but no compiled output or have both but ours is older
+		return M.compile()
+	else
+		return nil
+	end
+end
+
 local addons_to_skip = {
 	"lightline",
 	"lualine",
