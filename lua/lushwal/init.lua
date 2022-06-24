@@ -11,7 +11,10 @@ end
 local M = {}
 local config = {}
 local colors = {}
-M.compile = require("lushwal.compile")
+M.compile = function()
+	M.reload_colors()
+	require("lushwal.compile")()
+end
 M.compile_if_stale = function ()
 	local uv = vim.loop
 	local mtime = function(s)
@@ -31,6 +34,15 @@ M.compile_if_stale = function ()
 		return nil
 	end
 end
+M.reload_colors = function()
+	local cfg = M.config
+	colors = require("lushwal.colors")()
+	if type(cfg.color_overrides) == "function" then
+		colors = cfg.color_overrides(colors)
+	elseif type(cfg.color_overrides) == "table" then
+		colors = vim.tbl_extend("force", colors, cfg.color_overrides)
+	end
+end
 
 local addons_to_skip = {
 	"lightline",
@@ -45,6 +57,7 @@ setmetatable(M, {
 			return config
 		elseif key == "scheme" then
 			local cfg = lushwal.config
+			package.loaded["lushwal.base"] = nil
 			local scheme = require("lushwal.base")
 
 			-- Merge desired addons:
@@ -53,6 +66,7 @@ setmetatable(M, {
 			end, vim.tbl_keys(cfg.addons))) do
 				if not vim.tbl_contains(addons_to_skip, addon) then
 					xpcall(function()
+						package.loaded["lushwal.addon" .. addon] = nil
 						scheme = lush.merge({ scheme, require("lushwal.addons." .. addon) })
 					end, function(err)
 						error("There was an error loading lushwal.addons." .. addon .. "\n\n Error: ".. err)
@@ -61,14 +75,8 @@ setmetatable(M, {
 			end
 			return scheme
 		elseif key == "colors" then
-			if #colors == 0 then
-				local cfg = lushwal.config
-				colors = require("lushwal.colors")
-				if type(cfg.color_overrides) == "function" then
-					colors = cfg.color_overrides(colors)
-				elseif type(cfg.color_overrides) == "table" then
-					colors = vim.tbl_extend("force", colors, cfg.color_overrides)
-				end
+			if #vim.tbl_keys(colors) then
+				lushwal.reload_colors()
 			end
 			return colors
 		else

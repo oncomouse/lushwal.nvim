@@ -10,6 +10,7 @@ local autogrp = vim.api.nvim_create_augroup("lushwal", {})
 vim.api.nvim_create_autocmd("VimEnter", {
 	pattern = "*",
 	callback = function()
+		require("lushwal.watcher")()
 		lushwal.compile_if_stale()
 	end,
 	group = autogrp,
