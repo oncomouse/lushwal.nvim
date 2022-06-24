@@ -15,7 +15,7 @@ M.compile = function()
 	M.reload_colors()
 	require("lushwal.compile")()
 end
-M.compile_if_stale = function ()
+M.compile_if_stale = function()
 	local uv = vim.loop
 	local mtime = function(s)
 		return s.mtime.sec
@@ -38,7 +38,10 @@ M.reload_colors = function()
 	local cfg = M.config
 	colors = require("lushwal.colors")()
 	if type(cfg.color_overrides) == "function" then
-		colors = cfg.color_overrides(colors)
+		local ok, c = pcall(cfg.color_overrides, colors)
+		if ok then
+			colors = c
+		end
 	elseif type(cfg.color_overrides) == "table" then
 		colors = vim.tbl_extend("force", colors, cfg.color_overrides)
 	end
@@ -69,7 +72,7 @@ setmetatable(M, {
 						package.loaded["lushwal.addon" .. addon] = nil
 						scheme = lush.merge({ scheme, require("lushwal.addons." .. addon) })
 					end, function(err)
-						error("There was an error loading lushwal.addons." .. addon .. "\n\n Error: ".. err)
+						error("There was an error loading lushwal.addons." .. addon .. "\n\n Error: " .. err)
 					end)
 				end
 			end
