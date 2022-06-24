@@ -11,7 +11,10 @@ end
 local M = {}
 local config = {}
 local colors = {}
-M.compile = require("lushwal.compile")
+M.compile = function()
+	M.reload_colors()
+	require("lushwal.compile")()
+end
 M.compile_if_stale = function ()
 	local uv = vim.loop
 	local mtime = function(s)
@@ -29,6 +32,15 @@ M.compile_if_stale = function ()
 		return M.compile()
 	else
 		return nil
+	end
+end
+M.reload_colors = function()
+	local cfg = M.config
+	colors = require("lushwal.colors")()
+	if type(cfg.color_overrides) == "function" then
+		colors = cfg.color_overrides(colors)
+	elseif type(cfg.color_overrides) == "table" then
+		colors = vim.tbl_extend("force", colors, cfg.color_overrides)
 	end
 end
 
@@ -61,14 +73,8 @@ setmetatable(M, {
 			end
 			return scheme
 		elseif key == "colors" then
-			if #colors == 0 then
-				local cfg = lushwal.config
-				colors = require("lushwal.colors")
-				if type(cfg.color_overrides) == "function" then
-					colors = cfg.color_overrides(colors)
-				elseif type(cfg.color_overrides) == "table" then
-					colors = vim.tbl_extend("force", colors, cfg.color_overrides)
-				end
+			if #vim.tbl_keys(colors) then
+				lushwal.reload_colors()
 			end
 			return colors
 		else
