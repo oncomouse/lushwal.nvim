@@ -57,6 +57,7 @@ setmetatable(M, {
 			return config
 		elseif key == "scheme" then
 			local cfg = lushwal.config
+			package.loaded["lushwal.base"] = nil
 			local scheme = require("lushwal.base")
 
 			-- Merge desired addons:
@@ -65,6 +66,7 @@ setmetatable(M, {
 			end, vim.tbl_keys(cfg.addons))) do
 				if not vim.tbl_contains(addons_to_skip, addon) then
 					xpcall(function()
+						package.loaded["lushwal.addon" .. addon] = nil
 						scheme = lush.merge({ scheme, require("lushwal.addons." .. addon) })
 					end, function(err)
 						error("There was an error loading lushwal.addons." .. addon .. "\n\n Error: ".. err)
