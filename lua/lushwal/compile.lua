@@ -73,7 +73,7 @@ lushwright.to_vimscript,
 			fp:write(script)
 			fp:close()
 			vim.cmd("Shipwright " .. cache_path .. "/shipwright_build.lua")
-			print("[Lushwal.nvim] Vimscript compilation is done.")
+			vim.notify("[Lushwal.nvim] Vimscript compilation is done.")
 			vim.cmd("colorscheme lushwal")
 		else
 			error(

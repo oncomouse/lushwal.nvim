@@ -46,6 +46,10 @@ M.reload_colors = function()
 		colors = vim.tbl_extend("force", colors, cfg.color_overrides)
 	end
 end
+M.reload_theme = function()
+	M.reload_colors()
+	vim.cmd([[colorscheme lushwal]])
+end
 
 local addons_to_skip = {
 	"lightline",
