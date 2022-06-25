@@ -24,7 +24,9 @@ If you are using the caching feature (on by default), [shipwright.nvim](https://
 
 ### With pywal
 
-`lushwal.nvim` detects changes to the pywal theme both at startup and while Neovim is running. Currently this can introduce odd behavior if there are multiple instances of Neovim running simultaneously, but I'm looking into solving this.
+`lushwal.nvim` detects changes to the pywal theme both at startup and while Neovim is running.
+
+To synchronize between any Neovim processes that might be running on the system, `lushwal.nvim` needs a perl interpreter in order to [flock](https://linux.die.net/man/2/flock) the new colorscheme file. If `perl` isn't found, `lushwal.nvim` tries its best, but the theme can get out of sync.
 
 ## Configuration
 
