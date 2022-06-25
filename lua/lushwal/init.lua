@@ -34,6 +34,20 @@ M.compile_if_stale = function()
 		return nil
 	end
 end
+
+local hooks = {}
+M.add_reload_hook = function(callback)
+	table.insert(hooks, callback)
+end
+local function run_hooks()
+	for _,hook in pairs(hooks) do
+		if type(hook) == "string" then
+			vim.cmd(hook)
+		elseif type(hook) == "function" then
+			hook()
+		end
+	end
+end
 M.reload_colors = function()
 	local cfg = M.config
 	colors = require("lushwal.colors")()
@@ -49,6 +63,7 @@ end
 M.reload_theme = function()
 	M.reload_colors()
 	vim.cmd([[colorscheme lushwal]])
+	run_hooks()
 end
 
 local addons_to_skip = {

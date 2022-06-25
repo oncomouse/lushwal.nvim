@@ -28,6 +28,10 @@ If you are using the caching feature (on by default), [shipwright.nvim](https://
 
 To synchronize between any Neovim processes that might be running on the system, `lushwal.nvim` needs a perl interpreter in order to [flock](https://linux.die.net/man/2/flock) the new colorscheme file. If `perl` isn't found, `lushwal.nvim` tries its best, but the theme can get out of sync.
 
+### With other plugins
+
+Use `require("lushwal").add_reload_hook(hook)` to add callbacks that `lushwal.nvim` will run when new colorschemes are generated. The argument (`hook`) passed to `add_reload_hook` can be either a string (evaluated with `vim.cmd`) or a function.
+
 ## Configuration
 
 Set `vim.g.lushwal_configuration` (in Lua) or `g:lushwal_configuration` (in Vimscript) to override any of the following default values:
