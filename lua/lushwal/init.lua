@@ -1,6 +1,4 @@
 -- luacheck: globals vim
-vim.cmd("packadd lush.nvim")
-local lush = require("lush")
 local xdg = require("lushwal.utils.xdg")
 local default_configuration = require("lushwal.config")
 
@@ -50,6 +48,7 @@ local function run_hooks()
 end
 M.reload_colors = function()
 	local cfg = M.config
+	vim.cmd("packadd lush.nvim")
 	colors = require("lushwal.colors")()
 	if type(cfg.color_overrides) == "function" then
 		local ok, c = pcall(cfg.color_overrides, colors)
@@ -78,6 +77,9 @@ setmetatable(M, {
 			end
 			return config
 		elseif key == "scheme" then
+			vim.cmd("packadd lush.nvim")
+			local lush = require("lush")
+
 			local cfg = lushwal.config
 			package.loaded["lushwal.base"] = nil
 			local scheme = require("lushwal.base")
