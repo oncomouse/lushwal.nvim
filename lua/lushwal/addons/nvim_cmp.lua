@@ -8,8 +8,8 @@ return lush(function()
 	return {
 		CmpItemAbbr({ fg = colors.br_grey }),
 		CmpItemAbbrDeprecated({ fg = colors.br_grey, gui = "strikethrough" }),
-		CmpItemAbbrMatch({ fg = colors.white, gui = "bold" }),
-		CmpItemAbbrMatchFuzzy({ fg = colors.white, gui = "bold" }),
+		CmpItemAbbrMatch({ fg = colors.br_white, gui = "bold" }),
+		CmpItemAbbrMatchFuzzy({ fg = colors.br_white, gui = "bold" }),
 		CmpItemKind({ fg = colors.cyan }),
 		CmpItemMenu({ fg = colors.white }),
 	}
