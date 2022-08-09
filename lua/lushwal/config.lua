@@ -19,6 +19,7 @@ return {
 		lsp_trouble_nvim = false,
 		lualine = false,
 		markdown = false,
+		mini_nvim = true,
 		native_lsp = true,
 		neogit = false,
 		neomake = false,
