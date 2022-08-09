@@ -12,7 +12,7 @@ return lush(function()
 		MiniIndentscopeSymbol({ fg = colors.br_black, bg = colors.background }),
 		MiniIndentscopePrefix({ gui = "nocombine" }),
 		MiniJump({ fg = colors.blue, gui = "underline", sp = colors.br_grey }),
-		MiniJump2dSpot({ gui = "underline", sp = colors.blue }),
+		MiniJump2dSpot({ gui = "undercurl", guisp = colors.blue }),
 		MiniStarterCurrent({}),
 		MiniStarterFooter({ fg = colors.blue, gui = "bold" }),
 		MiniStarterHeader({ fg = colors.blue, gui = "bold" }),
