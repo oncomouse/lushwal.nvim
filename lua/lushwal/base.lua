@@ -14,6 +14,7 @@ local scheme = lush(function()
 
 		Debug({ fg = colors.red }),
 		Directory({ fg = colors.blue }),
+		Error({ fg = colors.red, bg = colors.color15 }),
 		ErrorMsg({ fg = colors.red, bg = colors.background }),
 		Exception({ fg = colors.red }),
 		FoldColumn({ fg = colors.blue, bg = colors.background }),
