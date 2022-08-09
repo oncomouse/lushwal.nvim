@@ -57,6 +57,7 @@ Set `vim.g.lushwal_configuration` (in Lua) or `g:lushwal_configuration` (in Vims
 		lsp_trouble_nvim = false,
 		lualine = false,
 		markdown = false,
+		mini_nvim = false,
 		native_lsp = true,
 		neogit = false,
 		neomake = false,
