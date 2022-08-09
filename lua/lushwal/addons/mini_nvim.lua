@@ -29,7 +29,7 @@ return lush(function()
 		MiniStatuslineModeCommand({ bg = colors.cyan, fg = colors.background }),
 		MiniStatuslineModeOther({ bg = colors.purple, fg = colors.background }),
 		MiniStatuslineDevinfo({ fg = colors.white, bg = colors.br_black }),
-		MiniStatuslineFilename({ fg = colors.grey, bg = colors.br_black }),
+		MiniStatuslineFilename({ fg = colors.yellow, bg = colors.br_black }),
 		MiniStatuslineFileinfo({ fg = colors.white, bg = colors.br_black }),
 		MiniStatuslineInactive({ fg = colors.grey, bg = colors.br_black }),
 		MiniSurround({ fg = colors.br_black, bg = colors.orange }),
