@@ -48,7 +48,9 @@ local function run_hooks()
 end
 M.reload_colors = function()
 	local cfg = M.config
-	vim.cmd("packadd lush.nvim")
+	if not package.loaded["lazy"] then
+		vim.cmd("packadd lush.nvim")
+	end
 	colors = require("lushwal.colors")()
 	if type(cfg.color_overrides) == "function" then
 		local ok, c = pcall(cfg.color_overrides, colors)
@@ -77,7 +79,9 @@ setmetatable(M, {
 			end
 			return config
 		elseif key == "scheme" then
-			vim.cmd("packadd lush.nvim")
+			if not package.loaded["lazy"] then
+				vim.cmd("packadd lush.nvim")
+			end
 			local lush = require("lush")
 
 			local cfg = lushwal.config

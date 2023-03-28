@@ -31,15 +31,20 @@ end
 local function lushwal_compile()
 	local config = require("lushwal").config
 	if config.compile_to_vimscript then
-		vim.cmd([[packadd lush.nvim]])
-		vim.cmd([[packadd shipwright.nvim]])
+		if not package.loaded["lazy"] then
+			vim.cmd([[packadd lush.nvim]])
+			vim.cmd([[packadd shipwright.nvim]])
+		end
 		if vim.fn.exists(":Shipwright") ~= 0 then
 			local xdg = require("lushwal.utils.xdg")
 			local cache_path = xdg("XDG_CACHE_HOME") .. "/lushwal"
 			vim.fn.mkdir(cache_path, "p")
 			local fp = io.open(cache_path .. "/shipwright_build.lua", "w")
-			local script = [[vim.cmd("packadd shipwright.nvim")
-vim.cmd("packadd lush.nvim")
+			local script = [[
+if not package.loaded["lazy"] then
+	vim.cmd("packadd shipwright.nvim")
+	vim.cmd("packadd lush.nvim")
+end
 local xdg = require("lushwal.utils.xdg")
 local colorscheme = require("lushwal").scheme
 local lushwright = require("shipwright.transform.lush")

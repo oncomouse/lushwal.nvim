@@ -1,4 +1,6 @@
-vim.cmd("packadd lush.nvim")
+if not package.loaded["lazy"] then
+	vim.cmd("packadd lush.nvim")
+end
 local lush = require("lush")
 
 local colors = require("lushwal").colors
