@@ -3,9 +3,7 @@
 -- is the default), it will compile a new VimL color file.
 vim.cmd([[set background=dark]])
 vim.g.colors_name = "lushwal"
-if not package.loaded["lazy"] then
-	vim.cmd([[packadd lush.nvim]])
-end
+pcall(vim.cmd, "packadd lush.nvim")
 require("lush")(require("lushwal").scheme)
 
 -- This makes sure we compile the vimscript scheme with any late added configuration variables (such as those set in a
