@@ -16,6 +16,21 @@ use({
 
 You can use `opt=true` because this plugin calls `packadd` when it needs lush and/or shipwright.
 
+### `lazy.nvim`
+
+```lua
+{
+	"oncomouse/lushwal.nvim",
+	cmd = { "LushwalCompile" },
+	dependencies = {
+		{ "rktjmp/lush.nvim" },
+		{ "rktjmp/shipwright.nvim" },
+	},
+}
+```
+
+The `cmd` key is necessary so that lazy.nvim knows to recognize the `:LushwalCompile` user command.
+
 ## Usage
 
 Set `colorscheme lushwal` somewhere in your `init.lua` or `init.vim`.
