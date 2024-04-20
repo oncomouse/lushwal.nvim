@@ -1,6 +1,7 @@
 -- luacheck: globals vim
 return {
 	compile_to_vimscript = true,
+	terminal_colors = false,
 	addons = {
 		ale = false,
 		barbar = false,
