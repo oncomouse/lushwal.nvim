@@ -54,6 +54,7 @@ Set `vim.g.lushwal_configuration` (in Lua) or `g:lushwal_configuration` (in Vims
 ~~~lua
 {
 	compile_to_vimscript = true,
+	terminal_colors = false,
 	color_overrides = nil,
 	addons = {
 		ale = false,
@@ -67,11 +68,13 @@ Set `vim.g.lushwal_configuration` (in Lua) or `g:lushwal_configuration` (in Vims
 		hop_nvim = false,
 		hydra_nvim = false,
 		indent_blankline_nvim = false,
+		lazy_nvim = false,
 		lightspeed_nvim = false,
 		lspsaga_nvim = false,
 		lsp_trouble_nvim = false,
 		lualine = false,
 		markdown = false,
+		mason_nvim = false,
 		mini_nvim = false,
 		native_lsp = true,
 		neogit = false,
