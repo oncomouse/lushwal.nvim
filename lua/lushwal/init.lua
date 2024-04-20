@@ -81,6 +81,29 @@ setmetatable(M, {
 			local lush = require("lush")
 
 			local cfg = lushwal.config
+
+			-- Set terminal colors if set to true in config
+			if cfg.terminal_colors == true then
+					local convert = require("lush.vivid.hsl.convert")
+					-- Set terminal colors
+					vim.g.terminal_color_0 = convert.hsl_to_hex(colors.color0)
+					vim.g.terminal_color_1 = convert.hsl_to_hex(colors.color1)
+					vim.g.terminal_color_2 = convert.hsl_to_hex(colors.color2)
+					vim.g.terminal_color_3 = convert.hsl_to_hex(colors.color3)
+					vim.g.terminal_color_4 = convert.hsl_to_hex(colors.color4)
+					vim.g.terminal_color_5 = convert.hsl_to_hex(colors.color5)
+					vim.g.terminal_color_6 = convert.hsl_to_hex(colors.color6)
+					vim.g.terminal_color_7 = convert.hsl_to_hex(colors.color7)
+					vim.g.terminal_color_8 = convert.hsl_to_hex(colors.color8)
+					vim.g.terminal_color_9 = convert.hsl_to_hex(colors.color9)
+					vim.g.terminal_color_10 = convert.hsl_to_hex(colors.color10)
+					vim.g.terminal_color_11 = convert.hsl_to_hex(colors.color11)
+					vim.g.terminal_color_12 = convert.hsl_to_hex(colors.color12)
+					vim.g.terminal_color_13 = convert.hsl_to_hex(colors.color13)
+					vim.g.terminal_color_14 = convert.hsl_to_hex(colors.color14)
+					vim.g.terminal_color_15 = convert.hsl_to_hex(colors.color15)
+			end
+
 			package.loaded["lushwal.base"] = nil
 			local scheme = require("lushwal.base")
 
