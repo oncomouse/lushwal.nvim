@@ -53,6 +53,7 @@ Set `vim.g.lushwal_configuration` (in Lua) or `g:lushwal_configuration` (in Vims
 
 ~~~lua
 {
+	transparent_background = false,
 	compile_to_vimscript = true,
 	terminal_colors = false,
 	color_overrides = nil,

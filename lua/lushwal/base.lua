@@ -47,7 +47,7 @@ local scheme = lush(function()
 		LineNr({ fg = colors.br_grey, bg = colors.background }),
 		ColorColumn({ fg = colors.grey }),
 		CursorColumn({ fg = colors.grey }),
-		CursorLine({ fg = colors.br_black, gui = "None" }),
+		CursorLine({ bg = colors.br_black, gui = "None" }),
 		CursorLineNr({ fg = colors.white, bg = colors.background, gui = "None" }),
 		PMenu({ fg = colors.white, bg = colors.br_black }),
 		PMenuSel({ fg = colors.foreground, bg = colors.blue }),

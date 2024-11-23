@@ -1,5 +1,6 @@
 -- luacheck: globals vim
 return {
+	transparent_background = false,
 	compile_to_vimscript = true,
 	terminal_colors = false,
 	addons = {

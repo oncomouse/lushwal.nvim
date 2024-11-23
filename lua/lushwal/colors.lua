@@ -15,7 +15,7 @@ local function generate_colors()
 	-- Generate Color Variables:
 	if ok then
 		local foreground = hsl(colors.special.foreground)
-		local background = hsl(colors.special.background)
+		local background = not require("lushwal").config.transparent_background and hsl(colors.special.background) or nil
 		local cursor = hsl(colors.special.cursor)
 		local color0 = hsl(colors.colors.color0)
 		local color1 = hsl(colors.colors.color1)
@@ -71,13 +71,13 @@ local function generate_colors()
 			br_cyan = color14,
 			br_white = color15,
 			-- Special colors:
-			grey = color8.mix(color7, 30), -- Darker mid-grey
-			br_grey = color8.mix(color7, 65), -- Mid-grey
+			grey = color8.mix(color7, 30),          -- Darker mid-grey
+			br_grey = color8.mix(color7, 65),       -- Mid-grey
 			orange = color1.mix(color3, 50),
-			purple = color4.rotate(65).li(45), -- Purple
+			purple = color4.rotate(65).li(45),      -- Purple
 			pink = color4.rotate(65).li(45).mix(color5, 50), -- Pink
 			amaranth = color1.mix(color4, 34).saturate(46).darken(5),
-			brown = color1.mix(color5, 15), -- Brown
+			brown = color1.mix(color5, 15),         -- Brown
 		}
 	else
 		return nil
