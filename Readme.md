@@ -26,6 +26,7 @@ You can use `opt=true` because this plugin calls `packadd` when it needs lush an
 		{ "rktjmp/lush.nvim" },
 		{ "rktjmp/shipwright.nvim" },
 	},
+	lazy = false,
 }
 ```
 
