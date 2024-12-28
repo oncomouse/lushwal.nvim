@@ -70,9 +70,8 @@ local function on_change(_, _, _)
 	end, 1)
 end
 function watch_file()
-	local wal_path = xdg("XDG_CACHE_HOME") .. "/wal/colors.json"
 	w:start(
-		wal_path,
+		require("lushwal").config.wal_path,
 		{},
 		vim.schedule_wrap(function(...)
 			on_change(...)

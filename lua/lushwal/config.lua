@@ -1,8 +1,11 @@
 -- luacheck: globals vim
+local xdg = require("lushwal.utils.xdg")
+
 return {
 	transparent_background = false,
 	compile_to_vimscript = true,
 	terminal_colors = false,
+	wal_path = xdg("XDG_CACHE_HOME") .. "/wal/colors.json",
 	addons = {
 		ale = false,
 		barbar = false,

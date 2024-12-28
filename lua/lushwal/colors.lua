@@ -1,6 +1,7 @@
 -- luacheck: globals vim
 local hsl = require("lush").hsl
-local xdg = require("lushwal.utils.xdg")
+
+local config = require("lushwal").config
 
 -- Decode some JSON:
 local json_decode = function(data)
@@ -8,9 +9,8 @@ local json_decode = function(data)
 end
 
 -- Locate pywal cache:
-local wal_path = xdg("XDG_CACHE_HOME") .. "/wal/colors.json"
 local function generate_colors()
-	local ok, colors = json_decode(vim.fn.readfile(wal_path))
+	local ok, colors = json_decode(vim.fn.readfile(config.wal_path))
 
 	-- Generate Color Variables:
 	if ok then
@@ -71,13 +71,13 @@ local function generate_colors()
 			br_cyan = color14,
 			br_white = color15,
 			-- Special colors:
-			grey = color8.mix(color7, 30),          -- Darker mid-grey
-			br_grey = color8.mix(color7, 65),       -- Mid-grey
+			grey = color8.mix(color7, 30),             -- Darker mid-grey
+			br_grey = color8.mix(color7, 65),          -- Mid-grey
 			orange = color1.mix(color3, 50),
-			purple = color4.rotate(65).li(45),      -- Purple
+			purple = color4.rotate(65).li(45),         -- Purple
 			pink = color4.rotate(65).li(45).mix(color5, 50), -- Pink
 			amaranth = color1.mix(color4, 34).saturate(46).darken(5),
-			brown = color1.mix(color5, 15),         -- Brown
+			brown = color1.mix(color5, 15),            -- Brown
 		}
 	else
 		return nil
