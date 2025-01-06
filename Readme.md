@@ -58,6 +58,7 @@ Set `vim.g.lushwal_configuration` (in Lua) or `g:lushwal_configuration` (in Vims
 	compile_to_vimscript = true,
 	terminal_colors = false,
 	color_overrides = nil,
+	wal_path = vim.fn.expand("XDG_CACHE_HOME/wal/colors.json"),
 	addons = {
 		ale = false,
 		barbar = false,

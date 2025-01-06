@@ -19,11 +19,10 @@ M.compile_if_stale = function()
 		return s.mtime.sec
 	end
 	local our_path = xdg("XDG_CONFIG_HOME") .. "/nvim/colors/lushwal.vim"
-	local wal_path = xdg("XDG_CACHE_HOME") .. "/wal/colors.json"
 	-- fs_stat will return nil for missing files, you could also check
 	-- specifically for stat, errmsg, code  where code == "ENOENT" for missing
 	-- files, vs unreadable but it probably doesn't matter most of the time.
-	local wal_stats = uv.fs_stat(wal_path)
+	local wal_stats = uv.fs_stat(config.wal_path)
 	local our_stats = uv.fs_stat(our_path)
 	if (wal_stats and not our_stats) or (wal_stats and our_stats and mtime(our_stats) < mtime(wal_stats)) then
 		-- have wal-file but no compiled output or have both but ours is older
@@ -38,7 +37,7 @@ M.add_reload_hook = function(callback)
 	table.insert(hooks, callback)
 end
 local function run_hooks()
-	for _,hook in pairs(hooks) do
+	for _, hook in pairs(hooks) do
 		if type(hook) == "string" then
 			vim.cmd(hook)
 		elseif type(hook) == "function" then
@@ -84,24 +83,24 @@ setmetatable(M, {
 
 			-- Set terminal colors if set to true in config
 			if cfg.terminal_colors == true then
-					local convert = require("lush.vivid.hsl.convert")
-					-- Set terminal colors
-					vim.g.terminal_color_0 = convert.hsl_to_hex(colors.color0)
-					vim.g.terminal_color_1 = convert.hsl_to_hex(colors.color1)
-					vim.g.terminal_color_2 = convert.hsl_to_hex(colors.color2)
-					vim.g.terminal_color_3 = convert.hsl_to_hex(colors.color3)
-					vim.g.terminal_color_4 = convert.hsl_to_hex(colors.color4)
-					vim.g.terminal_color_5 = convert.hsl_to_hex(colors.color5)
-					vim.g.terminal_color_6 = convert.hsl_to_hex(colors.color6)
-					vim.g.terminal_color_7 = convert.hsl_to_hex(colors.color7)
-					vim.g.terminal_color_8 = convert.hsl_to_hex(colors.color8)
-					vim.g.terminal_color_9 = convert.hsl_to_hex(colors.color9)
-					vim.g.terminal_color_10 = convert.hsl_to_hex(colors.color10)
-					vim.g.terminal_color_11 = convert.hsl_to_hex(colors.color11)
-					vim.g.terminal_color_12 = convert.hsl_to_hex(colors.color12)
-					vim.g.terminal_color_13 = convert.hsl_to_hex(colors.color13)
-					vim.g.terminal_color_14 = convert.hsl_to_hex(colors.color14)
-					vim.g.terminal_color_15 = convert.hsl_to_hex(colors.color15)
+				local convert = require("lush.vivid.hsl.convert")
+				-- Set terminal colors
+				vim.g.terminal_color_0 = convert.hsl_to_hex(colors.color0)
+				vim.g.terminal_color_1 = convert.hsl_to_hex(colors.color1)
+				vim.g.terminal_color_2 = convert.hsl_to_hex(colors.color2)
+				vim.g.terminal_color_3 = convert.hsl_to_hex(colors.color3)
+				vim.g.terminal_color_4 = convert.hsl_to_hex(colors.color4)
+				vim.g.terminal_color_5 = convert.hsl_to_hex(colors.color5)
+				vim.g.terminal_color_6 = convert.hsl_to_hex(colors.color6)
+				vim.g.terminal_color_7 = convert.hsl_to_hex(colors.color7)
+				vim.g.terminal_color_8 = convert.hsl_to_hex(colors.color8)
+				vim.g.terminal_color_9 = convert.hsl_to_hex(colors.color9)
+				vim.g.terminal_color_10 = convert.hsl_to_hex(colors.color10)
+				vim.g.terminal_color_11 = convert.hsl_to_hex(colors.color11)
+				vim.g.terminal_color_12 = convert.hsl_to_hex(colors.color12)
+				vim.g.terminal_color_13 = convert.hsl_to_hex(colors.color13)
+				vim.g.terminal_color_14 = convert.hsl_to_hex(colors.color14)
+				vim.g.terminal_color_15 = convert.hsl_to_hex(colors.color15)
 			end
 
 			package.loaded["lushwal.base"] = nil
